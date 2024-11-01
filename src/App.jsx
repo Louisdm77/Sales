@@ -3,6 +3,7 @@ import Header from "./assets/Components/Header";
 import "./App.css";
 import Hero from "./assets/Components/Hero";
 import Side from "./assets/Components/Sidebar";
+import Deals from "./assets/Components/Deals";
 import "./assets/styles.css";
 function App() {
   const [sideShow, setSideShow] = useState(false);
@@ -14,6 +15,7 @@ function App() {
       <div className="overflow-hidden">
         <Header sideShow={sideShow} setSideShow={setSideShow} />
         <Hero />
+        <Deals />
       </div>
     </div>
   );
