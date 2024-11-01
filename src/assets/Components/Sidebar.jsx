@@ -3,15 +3,19 @@ import { useState } from "react";
 import { FaTags } from "react-icons/fa";
 import { FaCaretUp, FaCaretDown } from "react-icons/fa";
 import { MdOutlinePhoneAndroid } from "react-icons/md";
+import { FaTv } from "react-icons/fa";
 import { FaComputer } from "react-icons/fa6";
 import { MdCancel } from "react-icons/md";
 import { FaTools } from "react-icons/fa";
 const Sidebar = (props) => {
-  const [show, setShow] = useState(false);
+  const [phoneSection, setPhoneSection] = useState(false);
+  const [computerSection, setComputerSection] = useState(false);
+  const [homeSection, setHomeSection] = useState(false);
+  const [flatScreenSection, setFlatScreenSection] = useState(false);
 
   return (
     <div
-      className="side bg-blue-700 h-[100vh] relative w-[300px] text-white"
+      className="side bg-blue-700 h-[100vh] relative w-[300px] overflow-y-scroll text-white"
       style={{
         fontFamily: "Arial",
         display: props.sideShow ? "block" : "none",
@@ -31,14 +35,19 @@ const Sidebar = (props) => {
           Hot Deals
         </h3>
         <div className="p-2">
-          <button className="flex items-center" onClick={() => setShow(!show)}>
+          <button
+            className="flex items-center"
+            onClick={() => setPhoneSection(!phoneSection)}
+          >
             <MdOutlinePhoneAndroid /> &nbsp; Phone,Tablets & Gadgets
-            <FaCaretDown style={{ display: show ? "none" : "block" }} />{" "}
-            <FaCaretUp style={{ display: show ? "block" : "none" }} />
+            <FaCaretDown
+              style={{ display: phoneSection ? "none" : "block" }}
+            />{" "}
+            <FaCaretUp style={{ display: phoneSection ? "block" : "none" }} />
           </button>
           <ul
             className="drop  my-2 text-md transition duration-300 ease-in-out-300"
-            style={{ display: show ? "block" : "none" }}
+            style={{ display: phoneSection ? "block" : "none" }}
           >
             <a href="#" className="hover:bg-white">
               {" "}
@@ -62,14 +71,21 @@ const Sidebar = (props) => {
           </ul>
         </div>{" "}
         <div className="p-2">
-          <button className="flex items-center" onClick={() => setShow(!show)}>
+          <button
+            className="flex items-center"
+            onClick={() => setComputerSection(!computerSection)}
+          >
             <FaComputer /> &nbsp; Computers
-            <FaCaretDown style={{ display: show ? "none" : "block" }} />{" "}
-            <FaCaretUp style={{ display: show ? "block" : "none" }} />
+            <FaCaretDown
+              style={{ display: computerSection ? "none" : "block" }}
+            />{" "}
+            <FaCaretUp
+              style={{ display: computerSection ? "block" : "none" }}
+            />
           </button>
           <ul
             className="drop  my-2 text-md transition duration-300 ease-in-out-300"
-            style={{ display: show ? "block" : "none" }}
+            style={{ display: computerSection ? "block" : "none" }}
           >
             <a href="#" className="hover:bg-white">
               {" "}
@@ -93,14 +109,57 @@ const Sidebar = (props) => {
           </ul>
         </div>{" "}
         <div className="p-2">
-          <button className="flex items-center" onClick={() => setShow(!show)}>
+          <button
+            className="flex items-center"
+            onClick={() => setHomeSection(!homeSection)}
+          >
             <FaTools /> &nbsp; Household Items
-            <FaCaretDown style={{ display: show ? "none" : "block" }} />{" "}
-            <FaCaretUp style={{ display: show ? "block" : "none" }} />
+            <FaCaretDown
+              style={{ display: homeSection ? "none" : "block" }}
+            />{" "}
+            <FaCaretUp style={{ display: homeSection ? "block" : "none" }} />
           </button>
           <ul
             className="drop  my-2 text-md transition duration-300 ease-in-out-300"
-            style={{ display: show ? "block" : "none" }}
+            style={{ display: homeSection ? "block" : "none" }}
+          >
+            <a href="#" className="hover:bg-white">
+              {" "}
+              <li>Mobile Phones</li>
+            </a>
+            <hr />
+            <a href="#" className="hover:bg-white">
+              {" "}
+              <li>Tablets</li>
+            </a>{" "}
+            <hr />{" "}
+            <a href="#" className="hover:bg-white">
+              {" "}
+              <li>Laptops</li>
+            </a>
+            <hr />{" "}
+            <a href="#" className="hover:bg-white">
+              {" "}
+              <li>Accessories</li>
+            </a>
+          </ul>
+        </div>
+        <div className="p-2">
+          <button
+            className="flex items-center"
+            onClick={() => setFlatScreenSection(!flatScreenSection)}
+          >
+            <FaTv /> &nbsp; Flat Screens
+            <FaCaretDown
+              style={{ display: flatScreenSection ? "none" : "block" }}
+            />{" "}
+            <FaCaretUp
+              style={{ display: flatScreenSection ? "block" : "none" }}
+            />
+          </button>
+          <ul
+            className="drop  my-2 text-md transition duration-300 ease-in-out-300"
+            style={{ display: flatScreenSection ? "block" : "none" }}
           >
             <a href="#" className="hover:bg-white">
               {" "}
