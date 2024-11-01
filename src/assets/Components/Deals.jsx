@@ -1,5 +1,8 @@
 import React from "react";
 import imgg from "../../assets/images/Bfriday.jpg";
+import mega from "../../assets/images/mega.jpg";
+import megap from "../../assets/images/megap.avif";
+import meg from "../../assets/images/meg.jpg";
 
 const Deals = () => {
   return (
@@ -17,7 +20,7 @@ const Deals = () => {
         <a href="#">
           <div className="col border border-gray-300 rounded-lg flex justify-center items-center h-full">
             <img
-              src={imgg}
+              src={mega}
               alt=""
               className="object-cover rounded-lg h-full w-full"
             />
@@ -26,7 +29,7 @@ const Deals = () => {
         <a href="#">
           <div className="col border border-gray-300 rounded-lg flex justify-center items-center h-full">
             <img
-              src={imgg}
+              src={megap}
               alt=""
               className="object-cover rounded-lg h-full w-full"
             />
@@ -35,7 +38,7 @@ const Deals = () => {
         <a href="#">
           <div className="col border border-gray-300 rounded-lg flex justify-center items-center h-full">
             <img
-              src={imgg}
+              src={meg}
               alt=""
               className="object-cover rounded-lg h-full w-full"
             />
