@@ -3,10 +3,10 @@ import img from "../images/heroo.jpg";
 
 const Hero = () => {
   return (
-    <div className="h-[15em]">
+    <div className="h-[20em] md:hidden lg:hidden">
       <div
         className=" bg-orange-200 text-center font-bold"
-        style={{ fontFamily: "sans-serif" }}
+        style={{ fontFamily: "Arial" }}
       >
         Call to ORDER: +234 813 539 0524
       </div>

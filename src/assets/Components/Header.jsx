@@ -18,14 +18,19 @@ import "../styles.css";
 // import required modules
 import { Navigation } from "swiper";
 
-const Header = () => {
+const Header = (props) => {
   const [cartNum, setCartNum] = useState(0);
   return (
     <div className="h-[160px] lg:hidden md:hidden  bg-blue-700 py-2">
       <div className="  px-4 py-2 ">
         <div className="h-[20%] flex justify-between ">
           <div className="flex items-center justify-between items-center text-xl">
-            <button>
+            <button
+              onClick={() => {
+                props.setSideShow(true);
+                console.log(props.sideShow);
+              }}
+            >
               <RxHamburgerMenu className="text-white font-bold" />
             </button>
             <h3 className="mx-5 text-white font-bold text-lg italic">

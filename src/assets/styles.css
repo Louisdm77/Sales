@@ -46,3 +46,12 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.drop li {
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.side div {
+  padding-top: 20px;
+  border-bottom: 0.5px solid rgb(131, 122, 122);
+}
