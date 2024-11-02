@@ -84,7 +84,9 @@ const Deals = () => {
           </h2>
           <div>
             <h2 className="mx-10 font-bold text-center text-lg">
-              {hour} : {min} : {sec}
+              {hour < 10 ? "0" + hour : "" + hour}h :{" "}
+              {min < 10 ? "0" + min : "" + min}m :{" "}
+              {sec < 10 ? "0" + sec : "" + sec}s
             </h2>
           </div>
         </div>

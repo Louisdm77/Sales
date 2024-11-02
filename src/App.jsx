@@ -4,6 +4,7 @@ import "./App.css";
 import Hero from "./assets/Components/Hero";
 import Side from "./assets/Components/Sidebar";
 import Deals from "./assets/Components/Deals";
+import Topproducts from "./assets/Components/Topproducts";
 import "./assets/styles.css";
 function App() {
   const [sideShow, setSideShow] = useState(false);
@@ -16,6 +17,7 @@ function App() {
         <Header sideShow={sideShow} setSideShow={setSideShow} />
         <Hero />
         <Deals />
+        <Topproducts />
       </div>
     </div>
   );
