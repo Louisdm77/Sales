@@ -48,7 +48,7 @@ const Topproducts = () => {
     {
       id: 2,
       image: Samsung,
-      name: "Samsung Galaxy S22 Ultra",
+      name: "Samsung Galaxy S22",
       price: 679.12,
       discountPercentage: 15,
       description:
