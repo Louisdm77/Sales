@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Iphone14 from "../../assets/images/iphone14.jpg";
 import Samsung from "../../assets/images/Samsung22.jpg";
 import Dell from "../../assets/images/Dell.jpg";
@@ -10,7 +10,18 @@ import micro from "../../assets/images/micro.avif";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Productdetails from "./Productdetails.jsx";
 const Topproducts = () => {
+  const [itemView, setItemView] = useState(false);
+  const [currentProduct, setCurrentProduct] = useState({
+    id: "",
+    image: "",
+    name: "",
+    price: "",
+    discountPercentage: "",
+    pieces: 1,
+    description: "",
+  });
   const settings = {
     className: "center",
     infinite: false,
@@ -29,15 +40,19 @@ const Topproducts = () => {
       id: 1,
       image: Iphone14,
       name: "Apple iPhone 14 Pro",
-      price: 999.99,
+      price: 780.99,
       discountPercentage: 10,
+      description:
+        "The Apple iPhone 14 Pro is a powerful device with a 6.7 inch display, 12MP camera, and 120Hz AMOLED display. It comes with a 12MP camera, 5G support, and a 120Hz AMOLED display. It is powered by a 120Hz AMOLED display, which is great for gaming and video-intensive applications. ",
     },
     {
       id: 2,
       image: Samsung,
       name: "Samsung Galaxy S22 Ultra",
-      price: 899.99,
+      price: 679.12,
       discountPercentage: 15,
+      description:
+        " The Samsung Galaxy S22 Ultra is a powerful device with a 6.8 inch display, 12MP camera, and 120Hz AMOLED display. It comes with a 12MP camera, 5G support, and a 120Hz AMOLED display. It is powered by a 120Hz AMOLED display, which is great for gaming and video-intensive applications.",
     },
     {
       id: 3,
@@ -45,6 +60,8 @@ const Topproducts = () => {
       name: "Dell XPS 13 Laptop",
       price: 249.06,
       discountPercentage: 12,
+      description:
+        "The Dell XPS 13 is a powerful device with a 13.3 inch display, 12MP camera, and 120Hz AMOLED display. It comes with a 12MP camera, 5G support, and a 120Hz AMOLED display. It is powered by a 120Hz AMOLED display, which is great for gaming and video-intensive applications.",
     },
     {
       id: 4,
@@ -52,6 +69,8 @@ const Topproducts = () => {
       image: PS,
       price: 500.0,
       discountPercentage: 8,
+      description:
+        "The Sony PlayStation 5 is a powerful device with a 15.6 inch display, 12MP camera, and 120Hz AMOLED display. It comes with a 12MP camera, 5G support, and a 120Hz AMOLED display. It is powered by a 120Hz AMOLED display, which is great for gaming and video-intensive applications.",
     },
     {
       id: 5,
@@ -59,6 +78,8 @@ const Topproducts = () => {
       name: "Apple MacBook Air",
       price: 789.99,
       discountPercentage: 10,
+      description:
+        "The Apple MacBook Air is a powerful device with a 13.3 inch display, 12MP camera, and 120Hz AMOLED display. It comes with a 12MP camera, 5G support, and a 120Hz AMOLED display. It is powered by a 120Hz AMOLED display, which is great for gaming and video-intensive applications.",
     },
     {
       id: 6,
@@ -66,6 +87,8 @@ const Topproducts = () => {
       image: google,
       price: 797.88,
       discountPercentage: 12,
+      description:
+        "The Google Pixel 6 Pro is a powerful device with a 6.5 inch display, 12MP camera, and 120Hz AMOLED display. It comes with a 12MP camera, 5G support, and a 120Hz AMOLED display. It is powered by a 120Hz AMOLED display, which is great for gaming and video-intensive applications.",
     },
     {
       id: 7,
@@ -73,6 +96,8 @@ const Topproducts = () => {
       name: "Nintendo Switch OLED",
       price: 359.99,
       discountPercentage: 5,
+      description:
+        "The Nintendo Switch OLED is a powerful device with a 10.8 inch display, 12MP camera, and 120Hz AMOLED display. It comes with a 12MP camera, 5G support, and a 120Hz AMOLED display. It is powered by a 120Hz AMOLED display, which is great for gaming and video-intensive applications.",
     },
     {
       id: 8,
@@ -80,6 +105,8 @@ const Topproducts = () => {
       name: "Microsoft Surface Pro 8",
       price: 989.99,
       discountPercentage: 30,
+      description:
+        "The Microsoft Surface Pro 8 is a powerful device with a 13.5 inch display, 12MP camera, and 120Hz AMOLED display. It comes with a 12MP camera, 5G support, and a 120Hz AMOLED display. It is powered by a 120Hz AMOLED display, which is great for gaming and video-intensive applications. ",
     },
   ];
   return (
@@ -98,7 +125,7 @@ const Topproducts = () => {
               </p>
               <div className="flex justify-between overflow-hidden items-center">
                 <p className="font-bold">${product.price}</p>
-                <p className="font-bold text-red-500 italic">
+                <p className="font-bold text-blue-500 italic">
                   <strike>
                     $
                     {(
@@ -111,13 +138,34 @@ const Topproducts = () => {
               <p className="bg-orange-500 text-white text-sm font-bold fit-content italic rounded-full text-center px-2 py-1 absolute top-2  ">
                 -{product.discountPercentage}%
               </p>
-              <button className="flex item-center justify-center bg-green-700 text-white px-5 py-1 w-full">
+              <button
+                className="flex item-center hover:bg-green-500 justify-center bg-green-700 text-white px-5 py-1 w-full"
+                onClick={() => {
+                  console.log(product.image),
+                    setCurrentProduct({
+                      id: product.id,
+                      image: product.image,
+                      name: product.name,
+                      price: product.price,
+                      discountPercentage: product.discountPercentage,
+                      pieces: 1,
+                      description: product.description,
+                    }),
+                    setItemView(true);
+                }}
+              >
                 VIEW
               </button>
             </div>
           );
         })}
       </Slider>
+      <Productdetails
+        currentProduct={currentProduct}
+        setCurrentProduct={setCurrentProduct}
+        itemView={itemView}
+        setItemView={setItemView}
+      />
     </div>
   );
 };
