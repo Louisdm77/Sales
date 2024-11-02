@@ -3,7 +3,7 @@ import img from "../images/heroo.jpg";
 
 const Hero = () => {
   return (
-    <div className="h-[20em] md:hidden lg:hidden">
+    <div className="h-[20em] sm:hidden md:hidden lg:hidden">
       <div
         className=" bg-orange-200 text-center font-bold h-[15%] flex justify-center items-center"
         style={{ fontFamily: "Arial" }}

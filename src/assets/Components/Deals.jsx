@@ -37,8 +37,8 @@ const Deals = () => {
   };
 
   return (
-    <div>
-      <div className="grid grid-cols-4 gap-2 p-4 mx-auto md:hidden lg:hidden h-[130px]">
+    <div className="sm:hidden md:hidden lg:hidden">
+      <div className="grid grid-cols-4 gap-2 p-4 mx-auto  h-auto">
         <a href="#">
           <div className="col border border-gray-300 rounded-lg flex justify-center items-center h-full">
             <img

@@ -43,28 +43,28 @@ const Topproducts = () => {
       id: 3,
       image: Dell,
       name: "Dell XPS 13 Laptop",
-      price: 1299.99,
+      price: 249.06,
       discountPercentage: 12,
     },
     {
       id: 4,
       name: "Sony PlayStation 5",
       image: PS,
-      price: 499.99,
+      price: 500.0,
       discountPercentage: 8,
     },
     {
       id: 5,
       image: macbook,
       name: "Apple MacBook Air",
-      price: 1099.99,
+      price: 789.99,
       discountPercentage: 10,
     },
     {
       id: 6,
       name: "Google Pixel 6 Pro",
       image: google,
-      price: 799.99,
+      price: 797.88,
       discountPercentage: 12,
     },
     {
@@ -78,26 +78,42 @@ const Topproducts = () => {
       id: 8,
       image: micro,
       name: "Microsoft Surface Pro 8",
-      price: 1399.99,
-      discountPercentage: 15,
+      price: 989.99,
+      discountPercentage: 30,
     },
   ];
   return (
-    <div className="slider-container">
+    <div className="slider-container md:hidden sm:hidden lg:hidden">
       <Slider {...settings}>
         {products.map((product) => {
           return (
-            <div className="h-48 p-2">
+            <div key={product.id} className="h-48 p-2">
               <img
                 src={product.image}
                 alt=""
                 className="object-cover w-full relative h-[65%]"
               />
-              <p className="text-red-500 font-bold">{product.name}</p>
-              <p>${product.price}</p>
-              <p className="bg-orange-500 text-white text-sm font-bold fit-content rounded-full text-center px-2 py-1 absolute top-2  ">
+              <p className="text-red-500 font-bold h-9 leading-tight">
+                {product.name}
+              </p>
+              <div className="flex justify-between overflow-hidden items-center">
+                <p className="font-bold">${product.price}</p>
+                <p className="font-bold text-red-500 italic">
+                  <strike>
+                    $
+                    {(
+                      product.price /
+                      (1 - product.discountPercentage / 100)
+                    ).toFixed(2)}
+                  </strike>
+                </p>
+              </div>
+              <p className="bg-orange-500 text-white text-sm font-bold fit-content italic rounded-full text-center px-2 py-1 absolute top-2  ">
                 -{product.discountPercentage}%
               </p>
+              <button className="flex item-center justify-center bg-green-700 text-white px-5 py-1 w-full">
+                VIEW
+              </button>
             </div>
           );
         })}
