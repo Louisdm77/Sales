@@ -3,7 +3,7 @@ import React, { Children, createContext, useContext, useState } from "react";
 const ViewContext = createContext();
 
 const ViewContextProvider = ({ children }) => {
-  const [viewItem, setViewItem] = useState(false);
+  const [viewItem, setViewItem] = useState(true);
   const [currentProduct, setCurrentProduct] = useState({
     id: "",
     image: "",

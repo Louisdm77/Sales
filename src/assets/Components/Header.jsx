@@ -38,19 +38,12 @@ const Header = (props) => {
             </h3>
           </div>
           <div className="flex  items-center me-0 justify-between ">
-            <BrowserRouter>
-              <Link to="#">
-                <FaRegUser className="text-white mx-5 font-bold text-xl" />
-              </Link>
-            </BrowserRouter>
-            <BrowserRouter>
-              <Link to="#" className="relative">
-                <IoCartOutline className="text-white mx-0 font-bold text-2xl " />
-                <span className="absolute top-[-9px] right-0 text-yellow-500 font-bold">
-                  {cartNum}
-                </span>
-              </Link>
-            </BrowserRouter>
+            <FaRegUser className="text-white mx-5 font-bold text-xl" />
+
+            <IoCartOutline className="text-white mx-0 font-bold text-2xl " />
+            <span className="absolute top-[7px] right-2 text-yellow-500 font-bold">
+              {cartNum}
+            </span>
           </div>
         </div>
         <div className="mt-5 relative">
@@ -78,33 +71,33 @@ const Header = (props) => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
           </SwiperSlide>
           <SwiperSlide>
-            <a href="#" className="flex items-center">
+            <Link to="#" className="flex items-center">
               <FaTags /> Deals
-            </a>
+            </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <a href="#">PC/Laptops</a>
+            <Link to="#">PC/Laptops</Link>
           </SwiperSlide>
           <SwiperSlide>
-            <a href="#">Iphones</a>
+            <Link to="#">Iphones</Link>
           </SwiperSlide>
           <SwiperSlide>
-            <a href="#">Camera</a>
+            <Link to="#">Camera</Link>
           </SwiperSlide>
           <SwiperSlide>
-            <a href="#">Electronics</a>
+            <Link to="#">Electronics</Link>
           </SwiperSlide>
           <SwiperSlide>
-            <a href="#">Watches</a>
+            <Link to="#">Watches</Link>
           </SwiperSlide>
           <SwiperSlide>
-            <a href="#">Gaming</a>
+            <Link to="#">Gaming</Link>
           </SwiperSlide>
           <SwiperSlide>
-            <a href="#">Help</a>
+            <Link to="#">Help</Link>
           </SwiperSlide>
         </Swiper>
       </div>

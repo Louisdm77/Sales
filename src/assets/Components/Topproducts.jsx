@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-
+import { Link } from "react-router-dom";
 import Iphone14 from "../../assets/images/iphone14.jpg";
 import Samsung from "../../assets/images/Samsung22.jpg";
 import Dell from "../../assets/images/Dell.jpg";
@@ -17,7 +17,6 @@ import { UserView } from "../Context/viewContext.jsx";
 const Topproducts = () => {
   const { viewItem, setViewItem, currentProduct, setCurrentProduct } =
     UserView();
-  const [itemView, setItemView] = useState(false);
 
   const settings = {
     className: "center",
@@ -107,7 +106,7 @@ const Topproducts = () => {
     },
   ];
   return (
-    <div className="slider-container md:hidden sm:hidden lg:hidden">
+    <div className="slider-container md:hidden sm:hidden lg:hidden mb-2">
       <Slider {...settings}>
         {products.map((product) => {
           return (
@@ -135,31 +134,32 @@ const Topproducts = () => {
               <p className="bg-orange-500 text-white text-sm font-bold fit-content italic rounded-full text-center px-2 py-1 absolute top-2  ">
                 -{product.discountPercentage}%
               </p>
-              <button
-                className="flex item-center hover:bg-green-500 justify-center bg-green-700 text-white px-5 py-1 w-full"
-                onClick={() => {
-                  console.log(currentProduct);
-                  console.log(product.image), console.log(viewItem);
-                  setCurrentProduct({
-                    id: product.id,
-                    image: product.image,
-                    name: product.name,
-                    price: product.price,
-                    discountPercentage: product.discountPercentage,
-                    pieces: 1,
-                    description: product.description,
-                  }),
-                    setViewItem(true);
-                }}
-              >
-                VIEW
-              </button>
+
+              <Link to="/product">
+                <button
+                  className="flex item-center hover:bg-green-500 justify-center bg-green-700 text-white px-5 py-1 w-full"
+                  onClick={() => {
+                    console.log(currentProduct);
+                    console.log(product.image), console.log(viewItem);
+                    setCurrentProduct({
+                      id: product.id,
+                      image: product.image,
+                      name: product.name,
+                      price: product.price,
+                      discountPercentage: product.discountPercentage,
+                      pieces: 1,
+                      description: product.description,
+                    }),
+                      setViewItem(true);
+                  }}
+                >
+                  VIEW
+                </button>
+              </Link>
             </div>
           );
         })}
       </Slider>
-
-      <Productdetails itemView={itemView} setItemView={setItemView} />
     </div>
   );
 };

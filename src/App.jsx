@@ -1,26 +1,15 @@
 import { useState } from "react";
-import Header from "./assets/Components/Header";
+import Home from "./assets/Components/Home.jsx";
 import "./App.css";
-import Hero from "./assets/Components/Hero";
-import Side from "./assets/Components/Sidebar";
-import Deals from "./assets/Components/Deals";
-import Topproducts from "./assets/Components/Topproducts";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./assets/styles.css";
+import { Routes, Route } from "react-router-dom";
+import Product from "./assets/Components/Productdetails.jsx";
+
 function App() {
-  const [sideShow, setSideShow] = useState(false);
   return (
-    <div>
-      <div className="absolute z-10 ">
-        <Side sideShow={sideShow} setSideShow={setSideShow} />
-      </div>
-      <div className="overflow-hidden">
-        <Header sideShow={sideShow} setSideShow={setSideShow} />
-        <Hero />
-        <Deals />
-        <Topproducts />
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/product" element={<Product />} />
+    </Routes>
   );
 }
 
