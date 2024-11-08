@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+
 import Iphone14 from "../../assets/images/iphone14.jpg";
 import Samsung from "../../assets/images/Samsung22.jpg";
 import Dell from "../../assets/images/Dell.jpg";
@@ -11,17 +12,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Productdetails from "./Productdetails.jsx";
+import { UserView } from "../Context/viewContext.jsx";
+// import ViewContextProvider from "../Context/viewContext.jsx";
 const Topproducts = () => {
+  const { viewItem, setViewItem, currentProduct, setCurrentProduct } =
+    UserView();
   const [itemView, setItemView] = useState(false);
-  const [currentProduct, setCurrentProduct] = useState({
-    id: "",
-    image: "",
-    name: "",
-    price: "",
-    discountPercentage: "",
-    pieces: 1,
-    description: "",
-  });
+
   const settings = {
     className: "center",
     infinite: false,
@@ -48,7 +45,7 @@ const Topproducts = () => {
     {
       id: 2,
       image: Samsung,
-      name: "Samsung Galaxy S22",
+      name: "Samsung Galaxy S22 ",
       price: 679.12,
       discountPercentage: 15,
       description:
@@ -141,17 +138,18 @@ const Topproducts = () => {
               <button
                 className="flex item-center hover:bg-green-500 justify-center bg-green-700 text-white px-5 py-1 w-full"
                 onClick={() => {
-                  console.log(product.image),
-                    setCurrentProduct({
-                      id: product.id,
-                      image: product.image,
-                      name: product.name,
-                      price: product.price,
-                      discountPercentage: product.discountPercentage,
-                      pieces: 1,
-                      description: product.description,
-                    }),
-                    setItemView(true);
+                  console.log(currentProduct);
+                  console.log(product.image), console.log(viewItem);
+                  setCurrentProduct({
+                    id: product.id,
+                    image: product.image,
+                    name: product.name,
+                    price: product.price,
+                    discountPercentage: product.discountPercentage,
+                    pieces: 1,
+                    description: product.description,
+                  }),
+                    setViewItem(true);
                 }}
               >
                 VIEW
@@ -160,12 +158,8 @@ const Topproducts = () => {
           );
         })}
       </Slider>
-      <Productdetails
-        currentProduct={currentProduct}
-        setCurrentProduct={setCurrentProduct}
-        itemView={itemView}
-        setItemView={setItemView}
-      />
+
+      <Productdetails itemView={itemView} setItemView={setItemView} />
     </div>
   );
 };
