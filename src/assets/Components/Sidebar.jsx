@@ -8,7 +8,7 @@ import { FaComputer } from "react-icons/fa6";
 import { MdCancel } from "react-icons/md";
 import { FaTools } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa";
-import { DivideIcon } from "@heroicons/react/16/solid";
+// import { DivideIcon } from "@heroicons/react/16/solid";
 const Sidebar = (props) => {
   const [phoneSection, setPhoneSection] = useState(false);
   const [computerSection, setComputerSection] = useState(false);
