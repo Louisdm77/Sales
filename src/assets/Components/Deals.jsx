@@ -77,7 +77,7 @@ const Deals = () => {
         </a>
       </div>
       <div>
-        <div className="bg-orange-200 p-2 flex  items-center">
+        <div className="bg-indigo-800 p-2 flex  items-center text-white">
           <h2 className="flex text-lg text-center mx-2 font-bold">
             {" "}
             <FaTags className="text-orange-500" /> Flash Sales

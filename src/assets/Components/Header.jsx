@@ -21,7 +21,7 @@ import { Navigation } from "swiper";
 const Header = (props) => {
   const [cartNum, setCartNum] = useState(0);
   return (
-    <div className="h-[160px] lg:hidden md:hidden  bg-orange-600 py-2">
+    <div className="h-[160px] lg:hidden md:hidden  bg-indigo-900 py-2">
       <div className="  px-4 py-2 ">
         <div className="h-[20%] flex justify-between ">
           <div className="flex items-center justify-between items-center text-xl">

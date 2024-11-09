@@ -137,7 +137,7 @@ const Topproducts = () => {
 
               <Link to="/product">
                 <button
-                  className="flex item-center hover:bg-green-500 justify-center bg-green-700 text-white px-5 py-1 w-full"
+                  className="flex item-center hover:bg-indigo-500 justify-center bg-indigo-800 text-white px-5 py-1 w-full"
                   onClick={() => {
                     console.log(currentProduct);
                     console.log(product.image), console.log(viewItem);

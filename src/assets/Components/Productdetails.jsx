@@ -31,7 +31,7 @@ const Productdetails = (props) => {
         style={{ display: viewItem ? "block" : "none" }}
       >
         <Link to="/">
-          <button className="text-4xl">
+          <button className=" mt-2 mx-2 text-5xl text-white bg-indigo-800">
             <IoIosArrowRoundBack />
           </button>
         </Link>
@@ -47,14 +47,14 @@ const Productdetails = (props) => {
               <button
                 ref={reduce}
                 onClick={handleDecrement}
-                className="bg-blue-500 text-white font-bold p-2 border-2  rounded-full"
+                className="bg-indigo-800 text-white font-bold p-2 border-2  rounded-full"
               >
                 -
               </button>
               <p className="text-center font-bold">{itemCount}</p>{" "}
               <button
                 onClick={handleIncrement}
-                className="bg-blue-500 p-2 text-white font-bold  border-2  rounded-full"
+                className="bg-indigo-800 p-2 text-white font-bold  border-2  rounded-full"
               >
                 +
               </button>
@@ -87,7 +87,7 @@ const Productdetails = (props) => {
 
             <p>{currentProduct.description}</p>
             <Link>
-              <button className="flex item-center hover:bg-blue-500 mt-5 py-3 justify-center bg-blue-700 text-white px-5 py-1 w-full">
+              <button className="flex item-center hover:bg-indigo-500 mt-5 py-3 justify-center bg-indigo-800 text-white px-5 py-1 w-full">
                 Add to Cart
               </button>
             </Link>
