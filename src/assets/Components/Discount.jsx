@@ -4,14 +4,14 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
-import Head1 from "../../assets/images/Head1.jpg";
-import Head2 from "../../assets/images/Head2.jpg";
-import Head3 from "../../assets/images/Head3.avif";
-import Head4 from "../../assets/images/Head4.avif";
-import Head5 from "../../assets/images/Head5.jpg";
-import Head6 from "../../assets/images/Head6.jpg";
-import Head7 from "../../assets/images/Head7.avif";
-import Head8 from "../../assets/images/Head8.jpg";
+import Head1 from "../images/Head1.jpg";
+import Head2 from "../images/Head2.jpg";
+import Head3 from "../images/Head3.avif";
+import Head4 from "../images/Head4.avif";
+import Head5 from "../images/Head5.jpg";
+import Head6 from "../images/Head6.jpg";
+import Head7 from "../images/Head7.avif";
+import Head8 from "../images/Head8.jpg";
 
 const Discount = () => {
   const settings = {
