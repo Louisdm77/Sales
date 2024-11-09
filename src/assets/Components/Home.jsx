@@ -5,6 +5,7 @@ import Hero from "./Hero";
 import Side from "./Sidebar";
 import Deals from "./Deals";
 import Topproducts from "./Topproducts";
+import Discount from "./Discount.jsx";
 import "../../assets/styles.css";
 function Home() {
   const [sideShow, setSideShow] = useState(false);
@@ -18,6 +19,7 @@ function Home() {
         <Hero />
         <Deals />
         <Topproducts />
+        <Discount />
       </div>
     </div>
   );
