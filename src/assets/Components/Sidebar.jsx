@@ -15,7 +15,7 @@ const Sidebar = (props) => {
 
   return (
     <div
-      className="side bg-white  h-[100vh] text-black relative w-[300px] overflow-y-scroll text-white "
+      className="side bg-white  h-[100vh] text-black relative w-[300px] overflow-y-scroll text-black "
       style={{
         fontFamily: "Arial",
         display: props.sideShow ? "block" : "none",

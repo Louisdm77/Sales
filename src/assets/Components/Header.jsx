@@ -21,7 +21,7 @@ import { Navigation } from "swiper";
 const Header = (props) => {
   const [cartNum, setCartNum] = useState(0);
   return (
-    <div className="h-[160px] lg:hidden md:hidden  bg-blue-700 py-2">
+    <div className="h-[160px] lg:hidden md:hidden  bg-orange-600 py-2">
       <div className="  px-4 py-2 ">
         <div className="h-[20%] flex justify-between ">
           <div className="flex items-center justify-between items-center text-xl">
@@ -41,7 +41,7 @@ const Header = (props) => {
             <FaRegUser className="text-white mx-5 font-bold text-xl" />
 
             <IoCartOutline className="text-white mx-0 font-bold text-2xl " />
-            <span className="absolute top-[7px] right-2 text-yellow-500 font-bold">
+            <span className="absolute top-[7px] right-2 text-white font-bold">
               {cartNum}
             </span>
           </div>
