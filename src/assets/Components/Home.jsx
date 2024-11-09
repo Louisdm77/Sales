@@ -7,6 +7,7 @@ import Deals from "./Deals";
 import Topproducts from "./Topproducts";
 import Discount from "./Discount.jsx";
 import "../../assets/styles.css";
+import Randomitems from "./Randomitems.jsx";
 function Home() {
   const [sideShow, setSideShow] = useState(false);
   return (
@@ -20,6 +21,7 @@ function Home() {
         <Deals />
         <Topproducts />
         <Discount />
+        <Randomitems />
       </div>
     </div>
   );

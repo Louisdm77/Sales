@@ -3,6 +3,7 @@ import Dimg from "../images/discount.jpg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useState, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
 import Head1 from "../images/head1.jpg";
 import Head2 from "../images/head2.jpg";
@@ -12,13 +13,16 @@ import Head5 from "../images/head5.jpg";
 import Head6 from "../images/head6.jpg";
 import Head7 from "../images/head7.avif";
 import Head8 from "../images/head8.jpg";
+import { UserView } from "../Context/viewContext";
 
 const Discount = () => {
+  const { viewItem, setViewItem, currentProduct, setCurrentProduct } =
+    UserView();
   const settings = {
     className: "center",
     infinite: false,
     centerPadding: "60px",
-    slidesToShow: 2.7,
+    slidesToShow: 2.6,
     swipeToSlide: true,
     afterChange: function (index) {
       console.log(

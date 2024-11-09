@@ -7,6 +7,8 @@ import { FaTv } from "react-icons/fa";
 import { FaComputer } from "react-icons/fa6";
 import { MdCancel } from "react-icons/md";
 import { FaTools } from "react-icons/fa";
+import { FaRegUser } from "react-icons/fa";
+import { DivideIcon } from "@heroicons/react/16/solid";
 const Sidebar = (props) => {
   const [phoneSection, setPhoneSection] = useState(false);
   const [computerSection, setComputerSection] = useState(false);
@@ -22,9 +24,17 @@ const Sidebar = (props) => {
     >
       <div style={{ paddingTop: "0px" }}>
         <div className="mt-0 h-[40%] bg-indigo-900 text-white relative">
-          <h3 className="mx-5 text-white font-bold text-lg italic">
-            Louis<span className="text-yellow-400">DM</span>
-          </h3>
+          <div className="mx-5 text-white font-bold text-lg italic flex justify-between">
+            <span>
+              Louis<span className="text-yellow-400">DM</span>
+            </span>
+            <div classname="flex items-center">
+              <span>
+                <FaRegUser />
+              </span>
+              <span>SignIn</span>
+            </div>
+          </div>
           <button
             className="absolute top-0 right-[0px] z-10 text-white-700 font-bold text-4xl"
             onClick={() => props.setSideShow(false)}
@@ -33,6 +43,8 @@ const Sidebar = (props) => {
           </button>
           <h3 className="p-6 mt-4 font-bold uppercase">Shop By Category</h3>
         </div>
+        <hr className="px-3" />
+        <h3 className="p-3 bg-grayy-300">Need help? contact us!</h3>
         <hr className="px-3" />
         <h3 className="flex items-center p-2 font-bold uppercase">
           <FaTags />
@@ -53,25 +65,16 @@ const Sidebar = (props) => {
             className="drop  my-2 text-md transition duration-300 ease-in-out-300"
             style={{ display: phoneSection ? "block" : "none" }}
           >
-            <a href="#" className="hover:bg-white">
+            <a href="#" className="hover:bg-gray-400">
               {" "}
               <li>Mobile Phones</li>
             </a>
             <hr />
-            <a href="#" className="hover:bg-white">
+            <a href="#" className="hover:bg-gray-400">
               {" "}
               <li>Tablets</li>
             </a>{" "}
             <hr />{" "}
-            <a href="#" className="hover:bg-white">
-              {" "}
-              <li>Laptops</li>
-            </a>
-            <hr />{" "}
-            <a href="#" className="hover:bg-white">
-              {" "}
-              <li>Accessories</li>
-            </a>
           </ul>
         </div>{" "}
         <div className="p-2">
@@ -91,24 +94,24 @@ const Sidebar = (props) => {
             className="drop  my-2 text-md transition duration-300 ease-in-out-300"
             style={{ display: computerSection ? "block" : "none" }}
           >
-            <a href="#" className="hover:bg-white">
+            <a href="#" className="hover:bg-gray-400">
               {" "}
-              <li>Mobile Phones</li>
+              <li>Desktops</li>
             </a>
             <hr />
-            <a href="#" className="hover:bg-white">
+            <a href="#" className="hover:bg-gray-400">
               {" "}
-              <li>Tablets</li>
+              <li>Neuro Computers</li>
             </a>{" "}
             <hr />{" "}
-            <a href="#" className="hover:bg-white">
+            <a href="#" className="hover:bg-gray-400">
               {" "}
               <li>Laptops</li>
             </a>
             <hr />{" "}
-            <a href="#" className="hover:bg-white">
+            <a href="#" className="hover:bg-gray-400">
               {" "}
-              <li>Accessories</li>
+              <li>Gaming laptops</li>
             </a>
           </ul>
         </div>{" "}
@@ -127,24 +130,24 @@ const Sidebar = (props) => {
             className="drop  my-2 text-md transition duration-300 ease-in-out-300"
             style={{ display: homeSection ? "block" : "none" }}
           >
-            <a href="#" className="hover:bg-white">
+            <a href="#" className="hover:bg-gray-400">
               {" "}
-              <li>Mobile Phones</li>
+              <li>Fridge</li>
             </a>
             <hr />
-            <a href="#" className="hover:bg-white">
+            <a href="#" className="hover:bg-gray-400">
               {" "}
-              <li>Tablets</li>
+              <li>Decoders</li>
             </a>{" "}
             <hr />{" "}
-            <a href="#" className="hover:bg-white">
+            <a href="#" className="hover:bg-gray-400">
               {" "}
-              <li>Laptops</li>
+              <li>Lightings</li>
             </a>
             <hr />{" "}
-            <a href="#" className="hover:bg-white">
+            <a href="#" className="hover:bg-gray-400">
               {" "}
-              <li>Accessories</li>
+              <li>Standing Fans</li>
             </a>
           </ul>
         </div>
@@ -162,27 +165,27 @@ const Sidebar = (props) => {
             />
           </button>
           <ul
-            className="drop  my-2 text-md transition duration-300 ease-in-out-300"
+            className="drop  my-2 text-md transition duration-300 ease-in-out-300 "
             style={{ display: flatScreenSection ? "block" : "none" }}
           >
-            <a href="#" className="hover:bg-white">
+            <a href="#" className="hover:bg-gray-400">
               {" "}
-              <li>Mobile Phones</li>
+              <li>LG</li>
             </a>
             <hr />
-            <a href="#" className="hover:bg-white">
+            <a href="#" className="hover:bg-gray-400">
               {" "}
-              <li>Tablets</li>
+              <li>Sharp</li>
             </a>{" "}
             <hr />{" "}
-            <a href="#" className="hover:bg-white">
+            <a href="#" className="hover:bg-gray-400">
               {" "}
-              <li>Laptops</li>
+              <li>Panasonic</li>
             </a>
             <hr />{" "}
-            <a href="#" className="hover:bg-white">
+            <a href="#" className="hover:bg-gray-400">
               {" "}
-              <li>Accessories</li>
+              <li>Toshiba</li>
             </a>
           </ul>
         </div>
