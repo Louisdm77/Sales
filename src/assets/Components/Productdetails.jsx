@@ -24,10 +24,10 @@ const Productdetails = (props) => {
     setItemCount(itemCount - 1);
   };
   return (
-    <>
+    <div className="sm:hidden md:hidden lg:hidden">
       <Headers />
       <div
-        className="bg-amber-50 h-auto"
+        className="bg-amber-50 h-auto "
         style={{ display: viewItem ? "block" : "none" }}
       >
         <Link to="/">
@@ -94,7 +94,7 @@ const Productdetails = (props) => {
           </div>
         </div>{" "}
       </div>
-    </>
+    </div>
   );
 };
 

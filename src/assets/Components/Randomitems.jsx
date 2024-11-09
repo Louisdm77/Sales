@@ -159,22 +159,13 @@ const Randomitems = () => {
       description:
         " Unlock advanced gaming features with Razer Kraken X's customizable lighting, cooling ear cushions, and precise 7.1 surround sound.",
     },
-    {
-      id: 16,
-      image: micro,
-      name: "Microsoft Surface Pro 8",
-      price: 989.99,
-      discountPercentage: 30,
-      description:
-        "The Microsoft Surface Pro 8 is a powerful device with a 13.5 inch display, 12MP camera, and 120Hz AMOLED display. It comes with a 12MP camera, 5G support, and a 120Hz AMOLED display. It is powered by a 120Hz AMOLED display, which is great for gaming and video-intensive applications. ",
-    },
   ];
   return (
-    <div>
+    <div className="mb-10 sm:hidden md:hidden lg:hidden xl:hidden">
       <div className="bg-indigo-900 text-white py-4">
         <h3 className="text-center font-bold text-2xl">All Purpose </h3>
       </div>
-      <div class="grid grid-cols-3 grid-rows-6 gap-y-4">
+      <div class="grid grid-cols-3 grid-rows-5 gap-y-12">
         {products.map((product) => {
           return (
             <div key={product.id} className="h-48 p-2 relative">

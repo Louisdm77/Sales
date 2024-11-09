@@ -8,6 +8,7 @@ import Topproducts from "./Topproducts";
 import Discount from "./Discount.jsx";
 import "../../assets/styles.css";
 import Randomitems from "./Randomitems.jsx";
+import Footer from "./Footer.jsx";
 function Home() {
   const [sideShow, setSideShow] = useState(false);
   return (
@@ -22,6 +23,7 @@ function Home() {
         <Topproducts />
         <Discount />
         <Randomitems />
+        <Footer />
       </div>
     </div>
   );
