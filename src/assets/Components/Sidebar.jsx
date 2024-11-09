@@ -15,20 +15,24 @@ const Sidebar = (props) => {
 
   return (
     <div
-      className="side bg-white  h-[100vh] text-black relative w-[300px] overflow-y-scroll text-black "
+      className="side bg-white  h-[100vh] text-black w-[300px] overflow-y-scroll text-black "
       style={{
-        fontFamily: "Arial",
         display: props.sideShow ? "block" : "none",
       }}
     >
-      <button
-        className="absolute top-0 right-[0px] z-10 text-white-700 font-bold text-2xl"
-        onClick={() => props.setSideShow(false)}
-      >
-        <MdCancel />
-      </button>
-      <div>
-        <h3 className="p-2 font-bold uppercase">Shop By Category</h3>
+      <div style={{ paddingTop: "0px" }}>
+        <div className="mt-0 h-[40%] bg-indigo-900 text-white relative">
+          <h3 className="mx-5 text-white font-bold text-lg italic">
+            Louis<span className="text-yellow-400">DM</span>
+          </h3>
+          <button
+            className="absolute top-0 right-[0px] z-10 text-white-700 font-bold text-4xl"
+            onClick={() => props.setSideShow(false)}
+          >
+            <MdCancel />
+          </button>
+          <h3 className="p-6 mt-4 font-bold uppercase">Shop By Category</h3>
+        </div>
         <hr className="px-3" />
         <h3 className="flex items-center p-2 font-bold uppercase">
           <FaTags />

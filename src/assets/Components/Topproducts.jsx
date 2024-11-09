@@ -22,7 +22,7 @@ const Topproducts = () => {
     className: "center",
     infinite: false,
     centerPadding: "60px",
-    slidesToShow: 3,
+    slidesToShow: 2.6,
     swipeToSlide: true,
     afterChange: function (index) {
       console.log(

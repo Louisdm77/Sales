@@ -18,7 +18,7 @@ const Discount = () => {
     className: "center",
     infinite: false,
     centerPadding: "60px",
-    slidesToShow: 3,
+    slidesToShow: 2.7,
     swipeToSlide: true,
     afterChange: function (index) {
       console.log(
