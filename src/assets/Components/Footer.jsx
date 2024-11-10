@@ -4,15 +4,18 @@ import { FaGooglePlay } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="bg-indigo-900 overflow-y-scroll p-2 mb-4 p-4 text-white ">
-      <div className="flex justify-between items-center">
+    <div
+      className="bg-indigo-900 overflow-y-scroll px-12 md:px-20 lg:px-24 xl:px-40 2xl:px-64   border-box py-6 mb-4  text-white "
+      style={{ fontFamily: "arial" }}
+    >
+      <div className="flex justify-between ">
         <div>
-          <h3 className="mx-5 text-white text-start font-bold text-xl italic">
+          <h3 className="mx-2 text-white text-start font-bold text-xl italic">
             Louis<span className="text-yellow-400">DM</span>
           </h3>
         </div>
         <div>
-          <h2>Want to save big?</h2>
+          <h2 className="font-bold">Want to save big?</h2>
           <h4>
             Join our newsletter community and get notified about Jumia's latest
             discounts.
@@ -21,7 +24,7 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="p-2"
+              className="p-2 text-indigo-900"
             />
             <button type="submit" className="bg-orange-500 p-2 text-white">
               Subscribe
@@ -35,14 +38,14 @@ const Footer = () => {
               class="mr-2 h-4 w-4 text-blue-600 border-blue-600"
             />
             <label for="agree-checkbox" class="text-sm">
-              I agree to the
+              I agree to the &nbsp;
               <a href="#" target="_blank" class=" underline">
                 Terms and Conditions
               </a>
             </label>
           </div>
         </div>
-        <div className="hidden md:block sm:block lg:block">
+        <div className="hidden md:block sm:block lg:block font-bold">
           <h2>Download LouisDm mobile app</h2>
           <h4>Get the latest deals and offers on your mobile device.</h4>
           <div className="flex mt-2">
@@ -71,6 +74,171 @@ const Footer = () => {
               </div>
             </a>
           </div>
+        </div>
+      </div>
+      <div className="flex justify-between ">
+        <div className="mt-8 ">
+          <div>
+            <h2 className="font-bold text-xl">NEED HELP?</h2>
+            <ul className="text-sm leading-loose">
+              <li>
+                <a href="#" className="hover:text-orange-300">
+                  Contact Us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-orange-300">
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-orange-300">
+                  Returns
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="mt-8">
+            <h2 className="font-bold text-xl">USEFUL LINKS</h2>
+            <ul className="text-sm leading-loose">
+              <li>
+                <a href="#" className="hover:text-orange-300">
+                  Getting Started
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-orange-300">
+                  Best Sales deals
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-orange-300">
+                  First Time Discount
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-orange-300">
+                  Returns and Refunds
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-orange-300">
+                  Delivery Information
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-orange-300">
+                  Black Friday
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="mt-8">
+          <h2 className="font-bold text-xl">ABOUT LOUISDM</h2>
+          <ul className="text-sm leading-loose">
+            <li>
+              <a href="#" className="hover:text-orange-300">
+                Our Services
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-300">
+                Privacy Notice
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-300">
+                Official Blog
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-300">
+                Official Store
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-300">
+                Careers
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-300">
+                Terms and Condition
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="mt-8 hidden md:block sm:block lg:block">
+          <h2 className="font-bold text-xl">USEFUL LINKS</h2>
+          <ul className="text-sm leading-loose">
+            <li>
+              <a href="#" className="hover:text-orange-300">
+                Getting Started
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-300">
+                Best Sales deals
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-300">
+                First Time Discount
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-300">
+                Returns and Refunds
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-300">
+                Delivery Information
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-300">
+                Black Friday
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="mt-8 hidden md:block sm:block lg:block">
+          <h2 className="font-bold text-xl">USEFUL LINKS</h2>
+          <ul className="text-sm leading-loose">
+            <li>
+              <a href="#" className="hover:text-orange-300">
+                Getting Started
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-300">
+                Best Sales deals
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-300">
+                First Time Discount
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-300">
+                Returns and Refunds
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-300">
+                Delivery Information
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-300">
+                Black Friday
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
