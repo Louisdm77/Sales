@@ -172,7 +172,7 @@ const Randomitems = () => {
           return (
             <div
               key={product.id}
-              className="h-64 p-2 sm:h-72 sm:p-4 md:h-96 md:p-6"
+              className="h-64 p-2 sm:h-72 sm:p-4 md:h-96 md:p-6 relative"
             >
               <img
                 src={product.image}
