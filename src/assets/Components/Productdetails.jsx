@@ -24,7 +24,7 @@ const Productdetails = (props) => {
     setItemCount(itemCount - 1);
   };
   return (
-    <div className="sm:hidden md:hidden lg:hidden">
+    <div className=" lg:hidden">
       <Headers />
       <div
         className="bg-amber-50 h-auto "
@@ -43,7 +43,7 @@ const Productdetails = (props) => {
               alt=""
               className="w-full h-[80%] object-contain"
             />{" "}
-            <div className="flex justify-between items-center mt-1 border-2  mt-2 p-2">
+            <div className="flex justify-between items-center mt-1 border-2  mt-2 p-2 sm:text-2xl">
               <button
                 ref={reduce}
                 onClick={handleDecrement}
@@ -73,7 +73,7 @@ const Productdetails = (props) => {
                 ${currentProduct.price}
               </p>{" "}
               &nbsp;&nbsp;&nbsp;&nbsp;{" "}
-              <span className="text-gray-500 text-lg">
+              <span className="text-gray-500 text-lg ">
                 {" "}
                 <strike>
                   ${(currentProduct.discountPercentage * 100).toFixed(2)}
@@ -84,10 +84,12 @@ const Productdetails = (props) => {
                 {currentProduct.discountPercentage}%off
               </span>
             </div>
+            <div className="sm:text-2xl md:text-3xl">
+              <p>{currentProduct.description}</p>
+            </div>
 
-            <p>{currentProduct.description}</p>
             <Link>
-              <button className="flex item-center hover:bg-indigo-500 mt-5 py-3 justify-center bg-indigo-800 text-white px-5 py-1 w-full">
+              <button className="flex item-center hover:bg-indigo-500 mt-5 py-3 justify-center bg-indigo-800 text-white px-5 py-1 w-full sm:text-2xl md:text-3xl">
                 Add to Cart
               </button>
             </Link>
