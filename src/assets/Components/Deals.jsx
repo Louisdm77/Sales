@@ -37,8 +37,8 @@ const Deals = () => {
   };
 
   return (
-    <div className="sm:hidden md:hidden lg:hidden">
-      <div className="grid grid-cols-4 gap-2 p-4 mx-auto  h-auto">
+    <div className=" lg:hidden">
+      <div className="grid grid-cols-4 gap-2 p-4 mx-auto  h-auto sm:gap-1 sm:p-2 md:gap-4 md:p-4">
         <a href="#">
           <div className="col border border-gray-300 rounded-lg flex justify-center items-center h-full">
             <img
@@ -77,13 +77,13 @@ const Deals = () => {
         </a>
       </div>
       <div>
-        <div className="bg-indigo-800 p-2 flex  items-center text-white">
-          <h2 className="flex text-lg text-center mx-2 font-bold">
+        <div className="bg-indigo-800 p-2 flex  items-center text-white sm:p-4">
+          <h2 className="flex text-lg text-center mx-2 font-bold sm:text-3xl md:text-4xl">
             {" "}
             <FaTags className="text-orange-500" /> Flash Sales
           </h2>
           <div>
-            <h2 className="mx-10 font-bold text-center text-lg">
+            <h2 className="mx-10 font-bold text-center text-lg sm:text-3xl md:text-4xl">
               {hour < 10 ? "0" + hour : "" + hour}h :{" "}
               {min < 10 ? "0" + min : "" + min}m :{" "}
               {sec < 10 ? "0" + sec : "" + sec}s

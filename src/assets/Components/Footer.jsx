@@ -5,12 +5,12 @@ import { FaGooglePlay } from "react-icons/fa";
 const Footer = () => {
   return (
     <div
-      className="bg-indigo-900 overflow-y-scroll px-12 md:px-20 lg:px-24 xl:px-40 2xl:px-64   border-box py-6 mb-4  text-white "
+      className="bg-indigo-900 overflow-y-scroll px-6 md:px-20 lg:px-24 xl:px-40 2xl:px-64   border-box py-6 mb-4  text-white "
       style={{ fontFamily: "arial" }}
     >
-      <div className="flex justify-between ">
+      <div className=" justify-between block  sm:block lg:flex">
         <div>
-          <h3 className="mx-2 text-white text-start font-bold text-xl italic">
+          <h3 className="mx-2 text-white text-start font-bold mb-4 text-xl italic">
             Louis<span className="text-yellow-400">DM</span>
           </h3>
         </div>
@@ -45,15 +45,15 @@ const Footer = () => {
             </label>
           </div>
         </div>
-        <div className="hidden md:block sm:block lg:block font-bold">
+        <div className="hidden md:block sm:text-sm sm:mt-8 sm:mb-4 sm:block lg:block font-bold text-orange-300">
           <h2>Download LouisDm mobile app</h2>
           <h4>Get the latest deals and offers on your mobile device.</h4>
-          <div className="flex mt-2">
+          <div className="flex mt-2 text-white">
             <a
               href="#"
               className="mr-2 flex items-center hover:text-orange-300"
             >
-              <FaApple className="text-4xl" />{" "}
+              <FaApple className="text-4xl " />{" "}
               <div className="flex flex-col items-center">
                 <p className=" " style={{ fontSize: "8px" }}>
                   Download on the App Store

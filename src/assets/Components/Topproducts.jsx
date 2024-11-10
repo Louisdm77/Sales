@@ -106,20 +106,23 @@ const Topproducts = () => {
     },
   ];
   return (
-    <div className="slider-container md:hidden sm:hidden lg:hidden mb-2">
+    <div className="slider-container  lg:hidden mb-2">
       <Slider {...settings}>
         {products.map((product) => {
           return (
-            <div key={product.id} className="h-48 p-2">
+            <div
+              key={product.id}
+              className="h-64 p-2 sm:h-72 sm:p-4 md:h-96 md:p-6"
+            >
               <img
                 src={product.image}
                 alt=""
-                className="object-cover w-full relative h-[65%]"
+                className="object-cover object-center w-full relative h-[75%]"
               />
-              <p className="text-red-500 font-bold h-9 leading-tight">
+              <p className="text-red-500 font-bold h-9 sm:text-lg md:text-2xl leading-tight">
                 {product.name}
               </p>
-              <div className="flex justify-between overflow-hidden items-center">
+              <div className="flex justify-between overflow-hidden items-center sm:text-lg md:text-2xl">
                 <p className="font-bold">${product.price}</p>
                 <p className="font-bold text-blue-500 italic">
                   <strike>
@@ -137,7 +140,7 @@ const Topproducts = () => {
 
               <Link to="/product">
                 <button
-                  className="flex item-center hover:bg-indigo-500 justify-center bg-indigo-800 text-white px-5 py-1 w-full"
+                  className="flex item-center hover:bg-indigo-500 justify-center bg-indigo-800 text-white px-5 py-1 w-full  sm:text-lg sm:p-2 md:text-2xl md:p-2"
                   onClick={() => {
                     console.log(currentProduct);
                     console.log(product.image), console.log(viewItem);

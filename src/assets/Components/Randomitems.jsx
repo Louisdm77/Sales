@@ -161,23 +161,28 @@ const Randomitems = () => {
     },
   ];
   return (
-    <div className="mb-10 sm:hidden md:hidden lg:hidden xl:hidden">
+    <div className="mb-10  lg:hidden xl:hidden">
       <div className="bg-indigo-900 text-white py-4">
-        <h3 className="text-center font-bold text-2xl">All Purpose </h3>
+        <h3 className="text-center font-bold text-2xl md:text-3xl">
+          All Purpose{" "}
+        </h3>
       </div>
-      <div class="grid grid-cols-3 grid-rows-5 gap-y-12">
+      <div class="grid grid-cols-3 grid-rows-5 gap-y-12 sm:gap-4">
         {products.map((product) => {
           return (
-            <div key={product.id} className="h-48 p-2 relative">
+            <div
+              key={product.id}
+              className="h-64 p-2 sm:h-72 sm:p-4 md:h-96 md:p-6"
+            >
               <img
                 src={product.image}
                 alt=""
                 className="object-cover w-full relative h-[65%]"
               />
-              <p className="text-red-500 font-bold h-9 leading-tight">
+              <p className="text-red-500 font-bold h-9 leading-tight sm:text-lg">
                 {product.name}
               </p>
-              <div className="flex justify-between overflow-hidden items-center">
+              <div className="flex justify-between overflow-hidden items-center sm:text-lg">
                 <p className="font-bold">${product.price}</p>
                 <p className="font-bold text-blue-500 italic">
                   <strike>
@@ -195,7 +200,7 @@ const Randomitems = () => {
 
               <Link to="/product">
                 <button
-                  className="flex item-center hover:bg-indigo-500 justify-center bg-indigo-800 text-white px-5 py-1 w-full"
+                  className="flex item-center hover:bg-indigo-500 justify-center bg-indigo-800 text-white px-5 py-1 w-full sm:text-2xl"
                   onClick={() => {
                     console.log(currentProduct);
                     console.log(product.image), console.log(viewItem);

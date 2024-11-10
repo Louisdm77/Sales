@@ -106,23 +106,30 @@ const Discount = () => {
   ];
   return (
     <div>
-      <div className="h-[17em] sm:hidden md:hidden lg:hidden border-2">
-        <img src={Dimg} alt="dshj" className="h-full w-full object-cover" />
+      <div className="h-[22em] sm:h-[25em] md:h-[35em] lg:hidden border-2">
+        <img
+          src={Dimg}
+          alt="dshj"
+          className="h-full w-full object-conver object-center"
+        />
       </div>
-      <div className="slider-container md:hidden sm:hidden lg:hidden mb-2">
+      <div className="slider-container   lg:hidden mb-2">
         <Slider {...settings}>
           {products.map((product) => {
             return (
-              <div key={product.id} className="h-48 p-2">
+              <div
+                key={product.id}
+                className="h-72 p-2 sm:h-72 sm:p-4 md:h-96 md:p-6 "
+              >
                 <img
                   src={product.image}
                   alt=""
-                  className="object-cover w-full relative h-[65%]"
+                  className="object-cover object-center w-full relative h-[80%]"
                 />
-                <p className="text-red-500 font-bold h-9 leading-tight">
+                <p className="text-red-500 font-bold h-9 leading-tight sm:text-2xl">
                   {product.name}
                 </p>
-                <div className="flex justify-between overflow-hidden items-center">
+                <div className="flex justify-between overflow-hidden items-center sm:text-2xl">
                   <p className="font-bold">${product.price}</p>
                   <p className="font-bold text-blue-500 italic">
                     <strike>
@@ -134,13 +141,13 @@ const Discount = () => {
                     </strike>
                   </p>
                 </div>
-                <p className="bg-orange-500 text-white text-sm font-bold fit-content italic rounded-full text-center px-2 py-1 absolute top-2  ">
+                <p className="bg-orange-500 text-white text-sm font-bold fit-content italic rounded-full text-center px-2 py-1 absolute top-2  sm:text-2xl">
                   -{product.discountPercentage}%
                 </p>
 
                 <Link to="/product">
                   <button
-                    className="flex item-center hover:bg-indigo-500 justify-center bg-indigo-800 text-white px-5 py-1 w-full"
+                    className="flex item-center sm:text-2xl m:text-2xl hover:bg-indigo-500 justify-center bg-indigo-800 text-white px-5 py-1 w-full"
                     onClick={() => {
                       console.log(currentProduct);
                       console.log(product.image), console.log(viewItem);
