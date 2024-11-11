@@ -4,13 +4,22 @@ import { Link } from "react-router-dom";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { UserView } from "../Context/viewContext.jsx";
 import { useNavigate } from "react-router-dom";
-
 import Headers from "./Header.jsx";
 const Productdetails = (props) => {
   const reduce = useRef(null);
-  const { viewItem, setViewItem, currentProduct, setCurrentProduct } =
-    UserView();
-  const [itemCount, setItemCount] = useState(0);
+
+  const {
+    viewItem,
+    setViewItem,
+    currentProduct,
+    setCurrentProduct,
+    cartItems,
+    setCartItems,
+    cartNum,
+    setCartNum,
+    itemCount,
+    setItemCount,
+  } = UserView();
   const handleIncrement = () => {
     if (itemCount > 0) {
       reduce.current.disabled = false;
@@ -89,7 +98,14 @@ const Productdetails = (props) => {
             </div>
 
             <Link>
-              <button className="flex item-center hover:bg-indigo-500 mt-5 py-3 justify-center bg-indigo-800 text-white px-5 py-1 w-full sm:text-2xl md:text-3xl">
+              <button
+                className="flex item-center hover:bg-indigo-500 mt-5 py-3 justify-center bg-indigo-800 text-white px-5 py-1 w-full sm:text-2xl md:text-3xl"
+                onClick={() => {
+                  setCartItems([...cartItems, currentProduct]),
+                    console.log(cartItems),
+                    setCartNum(cartItems.length);
+                }}
+              >
                 Add to Cart
               </button>
             </Link>

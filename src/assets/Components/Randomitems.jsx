@@ -7,6 +7,7 @@ import macbook from "../../assets/images/macbook.jpg";
 import google from "../../assets/images/googlepixel.jpg";
 import nint from "../../assets/images/Nint.avif";
 import micro from "../../assets/images/micro.avif";
+
 import { Link } from "react-router-dom";
 import Head1 from "../images/head1.jpg";
 import Head2 from "../images/head2.jpg";

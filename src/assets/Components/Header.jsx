@@ -1,5 +1,5 @@
 import react from "react";
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaTags } from "react-icons/fa";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -7,6 +7,7 @@ import { FaRegUser } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import { IoSearchOutline } from "react-icons/io5";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { UserView } from "../Context/viewContext.jsx";
 
 // Import Swiper styles
 import "swiper/css";
@@ -19,7 +20,16 @@ import "../styles.css";
 import { Navigation } from "swiper";
 
 const Header = (props) => {
-  const [cartNum, setCartNum] = useState(0);
+  const {
+    viewItem,
+    setViewItem,
+    currentProduct,
+    setCurrentProduct,
+    cartItems,
+    setCartItems,
+    cartNum,
+    setCartNum,
+  } = UserView();
   return (
     <div className="h-auto  lg:hidden bg-indigo-900 py-2">
       <div className="  px-4 py-2 ">
@@ -40,10 +50,12 @@ const Header = (props) => {
           <div className="flex  items-center me-0 justify-between ">
             <FaRegUser className="text-white mx-5 font-bold  sm:text-2xl md:text-4xl" />
 
-            <IoCartOutline className="text-white mx-0 font-bold text-3xl md:text-4xl " />
-            <span className="absolute top-[7px] right-2 text-white font-bold md:text-2xl">
-              {cartNum}
-            </span>
+            <Link to="/cart">
+              <IoCartOutline className="text-white mx-0 font-bold text-3xl md:text-4xl " />
+              <span className="absolute top-[7px] right-2 text-white font-bold md:text-2xl">
+                {cartNum}
+              </span>
+            </Link>
           </div>
         </div>
         <div className="mt-5 relative">
