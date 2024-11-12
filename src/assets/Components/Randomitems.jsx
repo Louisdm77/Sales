@@ -162,13 +162,13 @@ const Randomitems = () => {
     },
   ];
   return (
-    <div className="mb-10  lg:hidden xl:hidden">
+    <div className="mb-10  ">
       <div className="bg-indigo-900 text-white py-4">
-        <h3 className="text-center font-bold text-2xl md:text-3xl">
+        <h3 className="text-center lg:hidden font-bold text-2xl md:text-3xl">
           All Purpose{" "}
         </h3>
       </div>
-      <div class="grid grid-cols-3 grid-rows-5 gap-y-12 sm:gap-4">
+      <div class="grid lg:grid-cols-4 lg:grid-rows-4 grid-cols-3 grid-rows-5 gap-y-12 sm:gap-4">
         {products.map((product) => {
           return (
             <div

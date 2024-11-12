@@ -31,7 +31,7 @@ const Header = (props) => {
     setCartNum,
   } = UserView();
   return (
-    <div className="h-auto  lg:hidden bg-indigo-900 py-2">
+    <div className="h-auto  bg-indigo-900 py-2">
       <div className="  px-4 py-2 ">
         <div className="h-[20%] flex justify-between ">
           <div className="flex items-center justify-between items-center text-xl">
@@ -47,32 +47,44 @@ const Header = (props) => {
               Louis<span className="text-yellow-400">DM</span>
             </h3>
           </div>
+          <div className="mt-5 relative lg:w-[70%] lg:mx-auto">
+            <form action="#">
+              <input
+                type="text"
+                className="block w-[100%] h-[40px] mx-auto rounded-3xl relative px-2 text-sm sm:px-8 sm:text-xl sm:h-[45px] lg:mx-auto"
+                placeholder="What can we help you find today?"
+              />
+              <button className="pointer">
+                <IoSearchOutline className="text-white bg-yellow-400 font-bold text-4xl p-2 rounded-3xl absolute top-1 right-1 lg:top-2 " />
+              </button>
+            </form>
+          </div>
           <div className="flex  items-center me-0 justify-between ">
             <FaRegUser className="text-white mx-5 font-bold  sm:text-2xl md:text-4xl" />
 
             <Link to="/cart">
               <IoCartOutline className="text-white mx-0 font-bold text-3xl md:text-4xl " />
-              <span className="absolute top-[7px] right-2 text-white font-bold md:text-2xl">
+              <span className="absolute top-[7px] right-2 lg:top-[30px] text-white font-bold md:text-2xl">
                 {cartNum}
               </span>
             </Link>
           </div>
         </div>
-        <div className="mt-5 relative">
+        <div className="mt-5 relative lg:hidden">
           <form action="#">
             <input
               type="text"
-              className="w-[100%] h-[40px] mx-auto rounded-3xl relative px-2 text-sm sm:px-8 sm:text-xl sm:h-[45px]"
+              className="block w-[100%] h-[40px] mx-auto rounded-3xl relative px-2 text-sm sm:px-8 sm:text-xl sm:h-[45px] lg:mx-auto"
               placeholder="What can we help you find today?"
             />
             <button className="pointer">
-              <IoSearchOutline className="text-white bg-yellow-400 font-bold text-4xl p-2 rounded-3xl absolute top-1 right-1" />
+              <IoSearchOutline className="text-white bg-yellow-400 font-bold text-4xl p-2 rounded-3xl absolute top-1 right-1 lg:top-2 " />
             </button>
           </form>
         </div>
       </div>
       <hr />
-      <div className="h-[50px] flex justify-between items-center sm:h-[65px]">
+      <div className="h-[50px] flex justify-between items-center sm:h-[65px] lg:h-[40px] ">
         <Swiper
           slidesPerView={4.5}
           spaceBetween={0}
@@ -85,50 +97,50 @@ const Header = (props) => {
           className="mySwiper "
         >
           <SwiperSlide>
-            <Link to="/" className="md:text-3xl sm:text-2xl sm:p-4">
+            <Link to="/" className="md:text-3xl sm:text-2xl sm:p-4 lg:text-xl">
               Home
             </Link>
           </SwiperSlide>
           <SwiperSlide>
             <Link
               to="#"
-              className="flex items-center md:text-3xl sm:text-2xl sm:p-4"
+              className="flex items-center md:text-3xl sm:text-2xl sm:p-4 lg:text-xl"
             >
               <FaTags /> Deals
             </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <Link to="#" className="md:text-3xl sm:text-2xl">
+            <Link to="#" className="md:text-3xl sm:text-2xl lg:text-xl">
               PC/Laptops
             </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <Link to="#" className="md:text-3xl sm:text-2xl">
+            <Link to="#" className="md:text-3xl sm:text-2xl lg:text-xl">
               Iphones
             </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <Link to="#" className="md:text-3xl sm:text-2xl">
+            <Link to="#" className="md:text-3xl sm:text-2xl lg:text-xl">
               Camera
             </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <Link to="#" className="md:text-3xl sm:text-2xl">
+            <Link to="#" className="md:text-3xl sm:text-2xl lg:text-xl">
               Electronics
             </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <Link to="#" className="md:text-3xl sm:text-2xl">
+            <Link to="#" className="md:text-3xl sm:text-2xl lg:text-xl">
               Watches
             </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <Link to="#" className="md:text-3xl sm:text-2xl">
+            <Link to="#" className="md:text-3xl sm:text-2xl lg:text-xl">
               Gaming
             </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <Link to="#" className="md:text-3xl sm:text-2xl">
+            <Link to="#" className="md:text-3xl sm:text-2xl lg:text-xl">
               Help
             </Link>
           </SwiperSlide>
