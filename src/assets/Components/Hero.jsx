@@ -7,7 +7,7 @@ import { FaBagShopping } from "react-icons/fa6";
 const Hero = () => {
   return (
     <div className="h-[20em] sm:h-[35em] md:h-[49em] lg:h-[40em] ">
-      <div className=" bg-indigo-800 border-2  text-white text-center font-bold h-[15%] lg:h-[8%] flex justify-center items-center sm:text-2xl md:text-3xl">
+      <div className=" bg-indigo-800 border-2  text-white text-center font-bold h-[15%] sm:h-[8%] md:h-[8%] lg:h-[8%] flex justify-center items-center sm:text-2xl md:text-3xl">
         Call to ORDER: +234 813 539 0524
       </div>
       <div className="h-[70%] w-[100%] flex justify-center items-center">

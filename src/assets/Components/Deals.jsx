@@ -38,11 +38,20 @@ const Deals = () => {
 
   return (
     <div className=" ">
-      <div className="grid grid-cols-4 gap-2 p-4 mx-auto  h-auto sm:gap-1 sm:p-2 md:gap-4 md:p-4 lg:gap-8 lg:p-12">
+      <div className="grid grid-cols-4 grid-rows-1 lg:grid-cols-5 lg:rows-1 gap-2 p-4 mx-auto  h-auto sm:gap-1 sm:p-2 md:gap-4 md:p-4 lg:gap-8 lg:p-12">
         <a href="#">
           <div className="col border border-gray-300 rounded-lg flex justify-center items-center h-full">
             <img
               src={imgg}
+              alt=""
+              className="object-cover rounded-lg h-full w-full"
+            />
+          </div>
+        </a>
+        <a href="#" className="hidden lg:block">
+          <div className="col border hidden lg:block border-gray-300 rounded-lg flex justify-center items-center h-full">
+            <img
+              src="https://ng.jumia.is/cms/0-0-black-friday/2024/Thumbnails/appliances.png"
               alt=""
               className="object-cover rounded-lg h-full w-full"
             />

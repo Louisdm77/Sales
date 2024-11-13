@@ -47,7 +47,7 @@ const Header = (props) => {
               Louis<span className="text-yellow-400">DM</span>
             </h3>
           </div>
-          <div className="mt-5 relative lg:w-[70%] lg:mx-auto">
+          <div className="mt-5 hidden relative lg:block lg:w-[70%] lg:mx-auto">
             <form action="#">
               <input
                 type="text"

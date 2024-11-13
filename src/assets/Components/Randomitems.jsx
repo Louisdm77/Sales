@@ -162,18 +162,18 @@ const Randomitems = () => {
     },
   ];
   return (
-    <div className="mb-10  ">
-      <div className="bg-indigo-900 text-white py-4">
-        <h3 className="text-center lg:hidden font-bold text-2xl md:text-3xl">
+    <div className="mb-10 ">
+      <div className="bg-indigo-900 text-white py-4 lg:hidden">
+        <h3 className="text-center  font-bold text-2xl md:text-3xl">
           All Purpose{" "}
         </h3>
       </div>
-      <div class="grid lg:grid-cols-4 lg:grid-rows-4 grid-cols-3 grid-rows-5 gap-y-12 sm:gap-4">
+      <div class="grid lg:grid-cols-5 lg:grid-rows-3 grid-cols-3 grid-rows-5 gap-y-12 sm:gap-4 p-12 ">
         {products.map((product) => {
           return (
             <div
               key={product.id}
-              className="h-64 p-2 sm:h-72 sm:p-4 md:h-96 md:p-6 relative"
+              className="h-64 p-2 sm:h-72 sm:p-4 md:h-96 md:p-6 relative lg:hover:border-2 hover:border-indigo-500"
             >
               <img
                 src={product.image}
