@@ -41,7 +41,7 @@ const Header = (props) => {
                 console.log(props.sideShow);
               }}
             >
-              <RxHamburgerMenu className="text-white text-4xl md:text-5xl font-bold" />
+              <RxHamburgerMenu className="text-white text-4xl md:text-5xl font-bold lg:hidden" />
             </button>
             <h3 className="mx-5 text-white font-bold italic sm:text-3xl md:text-4xl">
               Louis<span className="text-yellow-400">DM</span>

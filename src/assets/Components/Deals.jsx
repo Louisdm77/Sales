@@ -42,7 +42,7 @@ const Deals = () => {
         <a href="#">
           <div className="col border border-gray-300 rounded-lg flex justify-center items-center h-full">
             <img
-              src={imgg}
+              src="https://ng.jumia.is/cms/0-1-category-pages/0-all-category/powerbanks_300x400.png"
               alt=""
               className="object-cover rounded-lg h-full w-full"
             />
@@ -51,7 +51,7 @@ const Deals = () => {
         <a href="#" className="hidden lg:block">
           <div className="col border hidden lg:block border-gray-300 rounded-lg flex justify-center items-center h-full">
             <img
-              src="https://ng.jumia.is/cms/0-0-black-friday/2024/Thumbnails/appliances.png"
+              src="https://ng.jumia.is/cms/0-1-category-pages/0-all-category/laptops_300x400.png"
               alt=""
               className="object-cover rounded-lg h-full w-full"
             />
@@ -60,7 +60,7 @@ const Deals = () => {
         <a href="#">
           <div className="col border border-gray-300 rounded-lg flex justify-center items-center h-full">
             <img
-              src={mega}
+              src="https://ng.jumia.is/cms/0-1-category-pages/appliances/300x400/freezers_300x400.png"
               alt=""
               className="object-cover rounded-lg h-full w-full"
             />
@@ -69,7 +69,7 @@ const Deals = () => {
         <a href="#">
           <div className="col border border-gray-300 rounded-lg flex justify-center items-center h-full">
             <img
-              src={megap}
+              src="https://ng.jumia.is/cms/0-1-category-pages/appliances/300x400/washing-machines_300x400.png"
               alt=""
               className="object-cover rounded-lg h-full w-full"
             />
@@ -78,7 +78,7 @@ const Deals = () => {
         <a href="#">
           <div className="col border border-gray-300 rounded-lg flex justify-center items-center h-full">
             <img
-              src={meg}
+              src="https://ng.jumia.is/cms/0-1-category-pages/0-all-category/smartphones_300x400.png"
               alt=""
               className="object-cover rounded-lg h-full w-full"
             />

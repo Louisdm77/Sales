@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import Iphone14 from "../../assets/images/iphone14.jpg";
 import Samsung from "../../assets/images/Samsung22.jpg";
 import Dell from "../../assets/images/Dell.jpg";
@@ -161,6 +162,15 @@ const Randomitems = () => {
         " Unlock advanced gaming features with Razer Kraken X's customizable lighting, cooling ear cushions, and precise 7.1 surround sound.",
     },
   ];
+  const [apiProduct, setApiProduct] = useState([]);
+  const [limit, setLimit] = useState(10);
+  useEffect(() => {
+    fetch(`https://fakestoreapi.com/products?limit=${limit}`)
+      .then((res) => res.json())
+      .then((data) => setApiProduct(data))
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
     <div className="mb-10 ">
       <div className="bg-indigo-900 text-white py-4 lg:hidden">
@@ -168,19 +178,19 @@ const Randomitems = () => {
           All Purpose{" "}
         </h3>
       </div>
-      <div class="grid lg:grid-cols-5 lg:grid-rows-3 grid-cols-3 grid-rows-5 gap-y-12 sm:gap-4 p-12 ">
+      <div class="grid lg:grid-cols-5 lg:grid-rows-3 grid-cols-3 grid-rows-5 gap-y-12 sm:gap-4  ">
         {products.map((product) => {
           return (
             <div
               key={product.id}
-              className="h-64 p-2 sm:h-72 sm:p-4 md:h-96 md:p-6 relative lg:hover:border-2 hover:border-indigo-500"
+              className="h-64 p-2 sm:h-72 sm:p-4 md:h-96 md:p-6 relative lg:hover:border-2 bg-white hover:border-indigo-500"
             >
               <img
                 src={product.image}
                 alt=""
-                className="object-cover w-full relative h-[65%]"
+                className="object-fit w-full relative h-[65%]"
               />
-              <p className="text-red-500 font-bold h-9 leading-tight sm:text-lg">
+              <p className="text-red-500 text-sm font-bold h-9  leading-tight ">
                 {product.name}
               </p>
               <div className="flex justify-between overflow-hidden items-center sm:text-lg">
@@ -223,6 +233,58 @@ const Randomitems = () => {
             </div>
           );
         })}
+      </div>
+      <div className="text-center mt-4 bg-indigo-900 p-14 flex justify-between items-center text-white py-4">
+        <h2 className="text-2xl font-bold">Lowest Price Deals</h2>
+        <Link to="/deals" className="text-orange-500 text-lg">
+          See all >{" "}
+        </Link>
+      </div>
+      <div>
+        <div class="grid lg:grid-cols-5 lg:grid-rows-2 grid-cols-3 grid-rows-3 gap-y-12 sm:gap-4 ">
+          {apiProduct.map((apiproduct) => {
+            return (
+              <div
+                key={apiproduct.id}
+                className="h-64 p-2 sm:h-72 bg-white sm:p-4 md:h-96 md:p-6 relative lg:hover:border-2 hover:border-indigo-500"
+              >
+                <img
+                  src={apiproduct.image}
+                  alt=""
+                  className="object-contain w-full relative h-[65%]"
+                />
+                <p className="text-red-500 text-sm h-16 lg:text-sm md:text-sm font-bold leading-tight sm:text-lg overflow-hidden">
+                  {apiproduct.title}
+                </p>
+                <div className="flex justify-between overflow-hidden items-center sm:text-lg">
+                  <p className="font-bold">${apiproduct.price}</p>
+                </div>
+
+                <Link to="/product">
+                  <button
+                    className="flex item-center hover:bg-indigo-500 justify-center bg-indigo-800 text-white px-5 py-1 w-full sm:text-2xl"
+                    onClick={() => {
+                      console.log(currentProduct);
+                      console.log(apiproduct.image), console.log(viewItem);
+                      setCurrentProduct({
+                        id: apiproduct.id,
+                        image: apiproduct.image,
+                        name: apiproduct.name,
+                        price: apiproduct.price,
+                        discountPercentage: "",
+                        pieces: 1,
+                        description: apiproduct.description,
+                      }),
+                        setViewItem(true);
+                    }}
+                  >
+                    VIEW
+                  </button>
+                </Link>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

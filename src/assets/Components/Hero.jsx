@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import img from "../images/img.jpg";
 import buy from "../images/buy.webp";
+import vid from "../images/vid.mp4";
 import { IoCallOutline } from "react-icons/io5";
 import { FaBagShopping } from "react-icons/fa6";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper";
 const Hero = () => {
+  const progressCircle = useRef(null);
+  const progressContent = useRef(null);
+  const onAutoplayTimeLeft = (s, time, progress) => {
+    progressCircle.current.style.setProperty("--progress", 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
   return (
     <div className="h-[20em] sm:h-[35em] md:h-[49em] lg:h-[40em] ">
       <div className=" bg-indigo-800 border-2  text-white text-center font-bold h-[15%] sm:h-[8%] md:h-[8%] lg:h-[8%] flex justify-center items-center sm:text-2xl md:text-3xl">
@@ -23,7 +40,7 @@ const Hero = () => {
             <a href="">
               {" "}
               <li className="border-2  border-indigo-400 hover:bg-indigo-400 hover:text-white p-2 my-2">
-                Headphones
+                Liquor and Drinks
               </li>
             </a>
 
@@ -48,13 +65,13 @@ const Hero = () => {
             <a href="">
               {" "}
               <li className="border-2  border-indigo-400 hover:bg-indigo-400 hover:text-white p-2 my-2">
-                Laptops
+                Power Banks
               </li>
             </a>
             <a href="">
               {" "}
               <li className=" border-2  border-indigo-400 hover:bg-indigo-400 hover:text-white p-2 my-2">
-                Inverters
+                Fashion
               </li>
             </a>
             <a href="">
@@ -66,11 +83,62 @@ const Hero = () => {
           </ul>
         </div>
         <div className="lg:w-[50%] w-full h-full">
-          <img
-            src={img}
-            alt="spark10"
-            className="h-full w-full object-cover object-fit"
-          />
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={30}
+            loop={true}
+            pagination={{
+              clickable: true,
+            }}
+            autoplay={{
+              delay: 5000, // Autoplay delay in milliseconds
+              disableOnInteraction: false, // Keep autoplaying even after user interaction
+            }}
+            navigation={true}
+            modules={[Autoplay, Pagination, Navigation]}
+            onAutoplayTimeLeft={onAutoplayTimeLeft}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              {" "}
+              <img
+                src="https://img.freepik.com/free-photo/christmas-shopping-concept-with-balls-cart_23-2147719652.jpg?ga=GA1.1.395615926.1720835137&semt=ais_hybrid"
+                alt="spark10"
+                className="h-full w-full object-cover object-fit"
+              />
+            </SwiperSlide>{" "}
+            <SwiperSlide>
+              {" "}
+              <img
+                src="https://img.freepik.com/free-photo/woman-holds-colorful-shopping-bags_1157-45687.jpg?t=st=1731686272~exp=1731689872~hmac=105590294a24aa1339952896d645cd3e0169e6f1f727814a8e283d4093aadcb8&w=740"
+                alt="spark10"
+                className="h-full w-full object-cover object-fit"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                src="https://img.freepik.com/free-photo/afro-american-couple-holding-christmas-presents_1303-4880.jpg?ga=GA1.1.395615926.1720835137&semt=ais_hybrid"
+                alt="spark10"
+                className="h-full w-full object-cover object-fit"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              {" "}
+              <img
+                src="https://img.freepik.com/premium-photo/trolley-products-brick-wall-background-new-year-s-sale-shares_494741-15456.jpg?ga=GA1.1.395615926.1720835137&semt=ais_hybrid"
+                alt="spark10"
+                className="h-full w-full object-cover object-fit"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              {" "}
+              <img
+                src="https://img.freepik.com/free-photo/beautiful-realistic-christmas-sales-banner-template-with-3d-elements-copy-space_69286-490.jpg?ga=GA1.1.395615926.1720835137&semt=ais_hybrid"
+                alt="spark10"
+                className="h-full w-full object-cover object-fit"
+              />
+            </SwiperSlide>
+          </Swiper>
         </div>
         <div className="hidden p-4  lg:block lg:w-[25%] lg:h-[100%] bg-gray-200">
           <div className="bg-white h-[45%] mb-4 ">
@@ -109,7 +177,7 @@ const Hero = () => {
             <img
               src="https://cdn.pixabay.com/animation/2022/11/13/13/42/13-42-53-277_512.gif"
               className="h-full w-full object-cover object-fit"
-            />
+            />{" "}
           </div>
         </div>
       </div>
