@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Home from "./assets/Components/Home.jsx";
+import Allrandom from "./assets/Components/Allrandom.jsx";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Product from "./assets/Components/Productdetails.jsx";
@@ -12,6 +13,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/product" element={<Product />} />
       <Route path="/Cart" element={<Cart />} />
+      <Route path="/Allrandom" element={<Allrandom />} />
     </Routes>
   );
 }

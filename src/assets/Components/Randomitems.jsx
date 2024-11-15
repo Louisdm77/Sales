@@ -236,7 +236,7 @@ const Randomitems = () => {
       </div>
       <div className="text-center mt-4 bg-indigo-900 p-14 flex justify-between items-center text-white py-4">
         <h2 className="text-2xl font-bold">Lowest Price Deals</h2>
-        <Link to="/deals" className="text-orange-500 text-lg">
+        <Link to="/Allrandom" className="text-orange-500 text-lg">
           See all >{" "}
         </Link>
       </div>
