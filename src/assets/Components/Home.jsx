@@ -12,7 +12,7 @@ import Footer from "./Footer.jsx";
 function Home() {
   const [sideShow, setSideShow] = useState(false);
   return (
-    <div>
+    <div className="overflow-hidden">
       <div className="absolute z-10 ">
         <Side sideShow={sideShow} setSideShow={setSideShow} />
       </div>
