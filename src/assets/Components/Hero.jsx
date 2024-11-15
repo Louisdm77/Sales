@@ -99,7 +99,7 @@ const Hero = () => {
             onAutoplayTimeLeft={onAutoplayTimeLeft}
             className="mySwiper"
           >
-            <SwiperSlide>
+            <SwiperSlide className="box-border">
               {" "}
               <img
                 src="https://img.freepik.com/free-photo/christmas-shopping-concept-with-balls-cart_23-2147719652.jpg?ga=GA1.1.395615926.1720835137&semt=ais_hybrid"
@@ -107,7 +107,7 @@ const Hero = () => {
                 className="h-full w-full object-cover object-fit"
               />
             </SwiperSlide>{" "}
-            <SwiperSlide>
+            <SwiperSlide className="box-border">
               {" "}
               <img
                 src="https://img.freepik.com/free-photo/woman-holds-colorful-shopping-bags_1157-45687.jpg?t=st=1731686272~exp=1731689872~hmac=105590294a24aa1339952896d645cd3e0169e6f1f727814a8e283d4093aadcb8&w=740"
@@ -115,14 +115,14 @@ const Hero = () => {
                 className="h-full w-full object-cover object-fit"
               />
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide className="box-border">
               <img
                 src="https://img.freepik.com/free-photo/afro-american-couple-holding-christmas-presents_1303-4880.jpg?ga=GA1.1.395615926.1720835137&semt=ais_hybrid"
                 alt="spark10"
                 className="h-full w-full object-cover object-fit"
               />
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide className="box-border">
               {" "}
               <img
                 src="https://img.freepik.com/premium-photo/trolley-products-brick-wall-background-new-year-s-sale-shares_494741-15456.jpg?ga=GA1.1.395615926.1720835137&semt=ais_hybrid"
@@ -130,7 +130,7 @@ const Hero = () => {
                 className="h-full w-full object-cover object-fit"
               />
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide className="box-border">
               {" "}
               <img
                 src="https://img.freepik.com/free-photo/beautiful-realistic-christmas-sales-banner-template-with-3d-elements-copy-space_69286-490.jpg?ga=GA1.1.395615926.1720835137&semt=ais_hybrid"
