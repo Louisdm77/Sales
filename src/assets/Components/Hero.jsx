@@ -82,7 +82,7 @@ const Hero = () => {
             </a>
           </ul>
         </div>
-        {/* <div className="lg:w-[50%] w-full h-full max-w-100vw">
+        <div className="lg:w-[50%] w-full h-full max-w-100vw">
           <Swiper
             slidesPerView={1}
             spaceBetween={30}
@@ -139,7 +139,7 @@ const Hero = () => {
               />
             </SwiperSlide>
           </Swiper>
-        </div> */}
+        </div>
         <div className="hidden p-4  lg:block lg:w-[25%] lg:h-[100%] bg-gray-200">
           <div className="bg-white h-[45%] mb-4 ">
             <ul className="border-4 border-indigo-400">
