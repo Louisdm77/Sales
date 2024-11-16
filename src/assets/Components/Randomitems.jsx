@@ -168,7 +168,7 @@ const Randomitems = () => {
     fetch(`https://fakestoreapi.com/products?limit=${limit}`)
       .then((res) => res.json())
       .then((data) => setApiProduct(data))
-      .catch((error) => console.error(error));
+      .catch((error) => console.log(error));
   }, []);
 
   return (
@@ -237,11 +237,11 @@ const Randomitems = () => {
       <div className="text-center mt-4 bg-indigo-900 p-14 flex justify-between items-center text-white py-4">
         <h2 className="text-2xl font-bold">Lowest Price Deals</h2>
         <Link to="/Allrandom" className="text-orange-500 text-lg">
-          See all >{" "}
+          See all {">"}{" "}
         </Link>
       </div>
       <div>
-        <div class="grid lg:grid-cols-5 lg:grid-rows-2 grid-cols-3 grid-rows-3 gap-y-12 sm:gap-4 ">
+        <div class="mt-4 grid lg:grid-cols-5 lg:grid-rows-2 grid-cols-3 grid-rows-3 gap-y-12 sm:gap-4 ">
           {apiProduct.map((apiproduct) => {
             return (
               <div
@@ -284,6 +284,58 @@ const Randomitems = () => {
               </div>
             );
           })}
+        </div>
+      </div>
+      <div className="bg-indigo-900 text-white py-4 mt-4 text-start">
+        <h3 className="mx-8  font-bold text-2xl md:text-3xl">
+          You might be interested in:
+        </h3>
+      </div>
+      <div className="grid grid-cols-4 grid-rows-1 lg:grid-cols-5 lg:rows-1 gap-2 p-4 mx-auto  h-auto sm:gap-1 sm:p-2 md:gap-4 md:p-4 lg:gap-8 lg:p-12">
+        <div className="col border  lg:block border-gray-300 rounded-lg flex justify-center items-center h-full">
+          <Link to="#">
+            <img
+              src="https://ng.jumia.is/cms/0-1-category-pages/electronics/300x400/cameras_300x400.png"
+              alt="camera"
+              className="object-cover rounded-lg h-full w-full"
+            />
+          </Link>
+        </div>
+        <div className="col border hidden lg:block border-gray-300 rounded-lg flex justify-center items-center h-full">
+          <Link to="#">
+            <img
+              src="https://ng.jumia.is/cms/0-0-black-friday/2024/Thumbnails/beauty.png"
+              alt=""
+              className="object-cover rounded-lg h-full w-full"
+            />
+          </Link>
+        </div>
+        <div className="col border lg:block border-gray-300 rounded-lg flex justify-center items-center h-full">
+          <Link to="#">
+            <img
+              src="https://ng.jumia.is/cms/0-1-category-pages/fashion/300x400/Updated/Artboard_1.jpg"
+              alt="sneakers"
+              className="object-cover rounded-lg h-full w-full"
+            />
+          </Link>
+        </div>
+        <div className="col border  lg:block border-gray-300 rounded-lg flex justify-center items-center h-full">
+          <Link to="#">
+            <img
+              src="https://ng.jumia.is/cms/0-1-category-pages/fashion/300x400/Updated/Artboard_1_copy_3.jpg"
+              alt="jewelry"
+              className="object-cover rounded-lg h-full w-full"
+            />
+          </Link>
+        </div>
+        <div className="col border  lg:block border-gray-300 rounded-lg flex justify-center items-center h-full">
+          <Link to="#">
+            <img
+              src="https://ng.jumia.is/cms/0-1-category-pages/fashion/300x400/Updated/Artboard_1_copy_4.jpg"
+              alt="sneakers"
+              className="object-cover rounded-lg h-full w-full"
+            />
+          </Link>
         </div>
       </div>
     </div>

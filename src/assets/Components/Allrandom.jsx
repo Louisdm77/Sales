@@ -13,7 +13,7 @@ const Allrandom = () => {
       .then((response) => response.json())
       .then((data) => setAllData(data))
       .catch((error) => {
-        console.log(error);
+        console.log(`error:`, error);
       });
   }, []);
   return (
