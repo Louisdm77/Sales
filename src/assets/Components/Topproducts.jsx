@@ -15,8 +15,14 @@ import Productdetails from "./Productdetails.jsx";
 import { UserView } from "../Context/viewContext.jsx";
 // import ViewContextProvider from "../Context/viewContext.jsx";
 const Topproducts = () => {
-  const { viewItem, setViewItem, currentProduct, setCurrentProduct } =
-    UserView();
+  const {
+    viewItem,
+    setViewItem,
+    currentProduct,
+    setCurrentProduct,
+    itemCount,
+    setItemCount,
+  } = UserView();
 
   const settings = {
     className: "center",
@@ -150,7 +156,7 @@ const Topproducts = () => {
                       name: product.name,
                       price: product.price,
                       discountPercentage: product.discountPercentage,
-                      pieces: 1,
+                      pieces: itemCount,
                       description: product.description,
                     }),
                       setViewItem(true);

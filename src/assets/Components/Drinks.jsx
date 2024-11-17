@@ -370,6 +370,14 @@ function Drinks() {
   ];
 
   const [dums, setDums] = useState([]);
+  const {
+    viewItem,
+    setViewItem,
+    currentProduct,
+    setCurrentProduct,
+    itemCount,
+    setItemCount,
+  } = UserView();
 
   return (
     <div>
@@ -407,7 +415,7 @@ function Drinks() {
                     setCurrentProduct({
                       id: drink.id,
                       image: drink.image,
-                      name: drink.name,
+                      name: drink.title,
                       price: drink.price,
                       discountPercentage: "",
                       pieces: 1,

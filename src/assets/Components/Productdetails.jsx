@@ -33,7 +33,7 @@ const Productdetails = (props) => {
     setItemCount(itemCount - 1);
   };
   return (
-    <div className=" lg:hidden">
+    <div className="">
       <Headers />
       <div
         className="bg-amber-50 h-auto "
@@ -45,14 +45,14 @@ const Productdetails = (props) => {
           </button>
         </Link>
         <h1 className="text-3xl font-bold text-center ">Product Details</h1>
-        <div className="block h-auto justify-between p-2 pb-4">
-          <div className="  h-[40%] ">
+        <div className="block h-auto justify-between p-2 pb-4 lg:flex md:flex">
+          <div className="  h-[40%] md:w-[50%] lg:w-[50%] ">
             <img
               src={currentProduct.image}
               alt=""
-              className="w-full h-[80%] object-contain"
+              className="w-full h-[80%] object-contain lg:h-[200px]  lg:w-[60%] m-auto "
             />{" "}
-            <div className="flex justify-between items-center mt-1 border-2  mt-2 p-2 sm:text-2xl">
+            <div className="flex justify-between items-center mt-1 border-2  mt-2 p-2 sm:text-2xl lg:w-[70%] m-auto">
               <button
                 ref={reduce}
                 onClick={handleDecrement}
@@ -69,7 +69,7 @@ const Productdetails = (props) => {
               </button>
             </div>
           </div>
-          <div className=" h-full p-2  ">
+          <div className=" h-full p-2  lg:w-[50%]">
             <h4 className="text-blue-500 font-bold text-4xl">
               {currentProduct.name}
             </h4>
@@ -93,7 +93,7 @@ const Productdetails = (props) => {
                 {currentProduct.discountPercentage}%off
               </span>
             </div>
-            <div className="sm:text-2xl md:text-3xl">
+            <div className="sm:text-2xl md:text-3xl lg:text-lg text-lg mt-2">
               <p>{currentProduct.description}</p>
             </div>
 
@@ -101,9 +101,24 @@ const Productdetails = (props) => {
               <button
                 className="flex item-center hover:bg-indigo-500 mt-5 py-3 justify-center bg-indigo-800 text-white px-5 py-1 w-full sm:text-2xl md:text-3xl"
                 onClick={() => {
-                  setCartItems([...cartItems, currentProduct]),
-                    console.log(cartItems),
-                    setCartNum(cartItems.length);
+                  let productExists = false;
+                  for (let i = 0; i < cartItems.length; i++) {
+                    if (cartItems[i].id === currentProduct.id) {
+                      productExists = true;
+                      cartItems[i].pieces += itemCount;
+                      setCartItems([...cartItems]);
+                    }
+                  }
+
+                  if (!productExists) {
+                    setCartItems([...cartItems, currentProduct]),
+                      (currentProduct.pieces = itemCount),
+                      console.log(cartItems),
+                      setCartNum(cartItems.length + 1);
+                    console.log(itemCount);
+                    setItemCount(1);
+                  }
+                  setItemCount(1);
                 }}
               >
                 Add to Cart

@@ -162,7 +162,7 @@ const Randomitems = () => {
         " Unlock advanced gaming features with Razer Kraken X's customizable lighting, cooling ear cushions, and precise 7.1 surround sound.",
     },
   ];
-  const [apiProduct, setApiProduct] = useState([]);
+  const [apiProducts, setApiProduct] = useState([]);
   const [limit, setLimit] = useState(10);
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products?limit=${limit}`)
@@ -242,7 +242,7 @@ const Randomitems = () => {
       </div>
       <div>
         <div class="mt-4 grid lg:grid-cols-5 lg:grid-rows-2 grid-cols-3 grid-rows-3 gap-y-12 sm:gap-4 ">
-          {apiProduct.map((apiproduct) => {
+          {apiProducts.map((apiproduct) => {
             return (
               <div
                 key={apiproduct.id}
@@ -269,7 +269,7 @@ const Randomitems = () => {
                       setCurrentProduct({
                         id: apiproduct.id,
                         image: apiproduct.image,
-                        name: apiproduct.name,
+                        name: apiproduct.title,
                         price: apiproduct.price,
                         discountPercentage: "",
                         pieces: 1,
