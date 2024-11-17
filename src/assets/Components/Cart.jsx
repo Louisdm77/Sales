@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Header";
 import { useState, useContext } from "react";
 import { UserView } from "../Context/viewContext.jsx";
+import Drinks from "./Drinks.jsx";
 const Cart = () => {
   const {
     cartItems,
@@ -45,6 +46,7 @@ const Cart = () => {
           <h2 className="text-center">Payment Method </h2>
         </div>
       </div>
+      <Drinks />
     </div>
   );
 };

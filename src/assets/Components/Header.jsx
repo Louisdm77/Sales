@@ -103,10 +103,10 @@ const Header = (props) => {
           </SwiperSlide>
           <SwiperSlide>
             <Link
-              to="#"
+              to="/Drinks"
               className="flex items-center md:text-3xl sm:text-2xl sm:p-4 lg:text-xl"
             >
-              <FaTags /> Deals
+              <FaTags /> Drinks
             </Link>
           </SwiperSlide>
           <SwiperSlide>

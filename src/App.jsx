@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import Product from "./assets/Components/Productdetails.jsx";
 import Footer from "./assets/Components/Footer.jsx";
 import Cart from "./assets/Components/Cart.jsx";
+import Drinks from "./assets/Components/Drinks.jsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/product" element={<Product />} />
       <Route path="/Cart" element={<Cart />} />
       <Route path="/Allrandom" element={<Allrandom />} />
+      <Route path="/Drinks" element={<Drinks />} />
     </Routes>
   );
 }

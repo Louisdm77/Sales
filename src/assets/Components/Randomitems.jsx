@@ -287,8 +287,8 @@ const Randomitems = () => {
         </div>
       </div>
       <div className="bg-indigo-900 text-white py-4 mt-4 text-start">
-        <h3 className="mx-8  font-bold text-2xl md:text-3xl">
-          You might be interested in:
+        <h3 className="mx-8  font-bold text-lg md:text-3xl">
+          You might also be interested in:
         </h3>
       </div>
       <div className="grid grid-cols-4 grid-rows-1 lg:grid-cols-5 lg:rows-1 gap-2 p-4 mx-auto  h-auto sm:gap-1 sm:p-2 md:gap-4 md:p-4 lg:gap-8 lg:p-12">
