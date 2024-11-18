@@ -21,8 +21,6 @@ import Head8 from "../images/head8.jpg";
 import { UserView } from "../Context/viewContext";
 
 const Randomitems = () => {
-  const { viewItem, setViewItem, currentProduct, setCurrentProduct } =
-    UserView();
   const products = [
     {
       id: 1,
@@ -162,6 +160,8 @@ const Randomitems = () => {
         " Unlock advanced gaming features with Razer Kraken X's customizable lighting, cooling ear cushions, and precise 7.1 surround sound.",
     },
   ];
+  const { viewItem, setViewItem, currentProduct, setCurrentProduct } =
+    UserView();
   const [apiProducts, setApiProduct] = useState([]);
   const [limit, setLimit] = useState(10);
   useEffect(() => {
@@ -241,7 +241,7 @@ const Randomitems = () => {
         </Link>
       </div>
       <div>
-        <div class="mt-4 grid lg:grid-cols-5 lg:grid-rows-2 grid-cols-3 grid-rows-3 gap-y-12 sm:gap-4 ">
+        <div class="mt-4 grid lg:grid-cols-5 lg:grid-rows-2 grid-cols-3 grid-rows-4 gap-y-12 sm:gap-4 ">
           {apiProducts.map((apiproduct) => {
             return (
               <div
@@ -286,7 +286,7 @@ const Randomitems = () => {
           })}
         </div>
       </div>
-      <div className="bg-indigo-900 text-white py-4 mt-4 text-start">
+      <div className="bg-indigo-900 text-white py-4 mt-8 text-start">
         <h3 className="mx-8  font-bold text-lg md:text-3xl">
           You might also be interested in:
         </h3>

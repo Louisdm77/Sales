@@ -11,23 +11,27 @@ const Cart = () => {
     setCartNum,
     itemCount,
     setItemCount,
+    total,
+    setTotal,
+    totall,
+    setTotall,
   } = UserView();
   return (
     <div>
       <Header />
-      <div className="block mt-4 text-2xl px-8">
-        <div className="">
-          <h2 className="text-center">Checkout</h2>
+      <div className="block mt-4 text-2xl px-8 lg:flex lg:justify-between">
+        <div className="lg:w-[60%]">
+          <h2 className="text-center font-bold text-2xl">Shopping Cart</h2>
 
-          <table className="lg:w-[100%]  border-collapse">
-            <thead>
+          <table className=" w-full ">
+            {/* <thead>
               <tr className="bg-gray-200 text-center">
                 <th className="w-[25%] p-2 text-center border">Product</th>
                 <th className="w-[25%] p-2 text-center border">Name</th>
                 <th className="w-[25%] p-2 text-center border">Quantity</th>
                 <th className="w-[25%] p-2 text-center border">Total</th>
               </tr>
-            </thead>
+            </thead> */}
             <tbody>
               {cartItems.length === 0 ? (
                 <tr>
@@ -43,12 +47,16 @@ const Cart = () => {
                     </td>
                   </tr>
                   {cartItems.map((item) => (
-                    <tr key={item.id} className="bg-gray-200 mt-4 mb-4">
+                    <tr
+                      key={item.id}
+                      className="bg-gray-200"
+                      style={{ marginBottom: "10px" }}
+                    >
                       <td className="p-2 border ">
                         <img
                           src={item.image}
                           alt={item.name}
-                          className="lg:w-60 lg:h-60 w-30 m-auto h-30 object-contain"
+                          className="lg:w-40 lg:h-40 w-20 m-auto h-20 object-contain"
                         />
                       </td>
                       <td className="p-2 border text-center">{item.name}</td>
@@ -58,6 +66,7 @@ const Cart = () => {
                         <button
                           className="mx-4"
                           onClick={() => {
+                            setCartNum(cartNum - 1);
                             setCartItems(
                               cartItems.filter(
                                 (cartItem) => cartItem.id !== item.id
@@ -75,8 +84,45 @@ const Cart = () => {
             </tbody>
           </table>
         </div>
-        <div className="">
-          <h2 className="text-center">Payment Method </h2>
+        <div
+          className="lg:w-[30%] mt-4 lg:mt-0 p-4"
+          style={{
+            display: cartItems.length === 0 ? "none" : "block",
+          }}
+        >
+          <h2 className="text-center font-bold text-2xl">Payment Method </h2>
+
+          <div className="border border-gray-400 p-4 rounded-lg">
+            <h2 className="font-bold">Order Summary</h2>
+            <p className="flex justify-between items-center my-2">
+              <span>Subtotal</span>
+              <span>${total}</span>
+            </p>
+            <hr className="border border-gray-300" />
+            <p className="flex justify-between items-center my-2">
+              <span>Shipping estimate</span>
+              <span>${itemCount * 10}</span>
+            </p>
+            <hr className="border border-gray-300" />
+            <p className="flex justify-between items-center my-2">
+              <span>Tax estimate</span>
+              <span>${itemCount * 10}</span>
+            </p>
+            <hr className="border border-gray-300" />
+            <p className="flex justify-between items-center my-2">
+              <span>Subtotal</span>
+              <span>${itemCount * 10}</span>
+            </p>
+            <hr className="border border-gray-300" />
+            <p className="flex justify-between items-center my-2">
+              <span>Order total</span>
+              <span>${itemCount * 10}</span>
+            </p>
+            <hr className="border-2 border-gray-500" />
+            <button className="bg-blue-500 hover:bg-blue-700 text-white w-full font-bold py-2 px-4 rounded mt-4">
+              Proceed to payment
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -19,6 +19,10 @@ const Productdetails = (props) => {
     setCartNum,
     itemCount,
     setItemCount,
+    total,
+    setTotal,
+    totall,
+    setTotall,
   } = UserView();
   const handleIncrement = () => {
     if (itemCount > 0) {
@@ -119,6 +123,10 @@ const Productdetails = (props) => {
                     setItemCount(1);
                   }
                   setItemCount(1);
+                  setTotal([...total, currentProduct.price * itemCount]);
+                  total.map((tot) => {
+                    setTotall((totall += tot)).toFixed(2);
+                  });
                 }}
               >
                 Add to Cart
