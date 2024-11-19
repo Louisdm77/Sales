@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { UserView } from "../Context/viewContext.jsx";
 import { CiTrash } from "react-icons/ci";
 const Cart = () => {
@@ -15,7 +15,19 @@ const Cart = () => {
     setTotal,
     totall,
     setTotall,
+    orderTotal,
+    setOrderTotal,
   } = UserView();
+
+  const others = {
+    tax: 10,
+    ship: 10,
+  };
+
+  useEffect(() => {
+    const neww = parseFloat(totall) + (others.tax || 0) + (others.ship || 0); // Ensure totall others.tax and others.ship are numbers
+    setOrderTotal(neww.toFixed(2)); // Convert to a string with 2 decimal places
+  }, [totall, others.tax, others.ship]); // Add others.tax and others.ship to dependencies
   return (
     <div>
       <Header />
@@ -67,11 +79,13 @@ const Cart = () => {
                           className="mx-4"
                           onClick={() => {
                             setCartNum(cartNum - 1);
-                            setCartItems(
-                              cartItems.filter(
+                            setCartItems((prevCartItems) => {
+                              const newCartItems = prevCartItems.filter(
                                 (cartItem) => cartItem.id !== item.id
-                              )
-                            );
+                              );
+                              return newCartItems;
+                            });
+                            setTotall(totall - item.price);
                           }}
                         >
                           <CiTrash />
@@ -96,27 +110,23 @@ const Cart = () => {
             <h2 className="font-bold">Order Summary</h2>
             <p className="flex justify-between items-center my-2">
               <span>Subtotal</span>
-              <span>${total}</span>
+              <span>${totall}</span>
             </p>
             <hr className="border border-gray-300" />
             <p className="flex justify-between items-center my-2">
               <span>Shipping estimate</span>
-              <span>${itemCount * 10}</span>
+              <span>${others.ship}</span>
             </p>
             <hr className="border border-gray-300" />
             <p className="flex justify-between items-center my-2">
               <span>Tax estimate</span>
-              <span>${itemCount * 10}</span>
+              <span>${others.tax}</span>
             </p>
-            <hr className="border border-gray-300" />
-            <p className="flex justify-between items-center my-2">
-              <span>Subtotal</span>
-              <span>${itemCount * 10}</span>
-            </p>
+
             <hr className="border border-gray-300" />
             <p className="flex justify-between items-center my-2">
               <span>Order total</span>
-              <span>${itemCount * 10}</span>
+              <span>${orderTotal}</span>
             </p>
             <hr className="border-2 border-gray-500" />
             <button className="bg-blue-500 hover:bg-blue-700 text-white w-full font-bold py-2 px-4 rounded mt-4">

@@ -9,6 +9,7 @@ const ViewContextProvider = ({ children }) => {
   const [itemCount, setItemCount] = useState(1);
   const [total, setTotal] = useState([]);
   const [totall, setTotall] = useState(0);
+  const [orderTotal, setOrderTotal] = useState(0);
   const [currentProduct, setCurrentProduct] = useState({
     id: "",
     image: "",
@@ -35,6 +36,8 @@ const ViewContextProvider = ({ children }) => {
         setTotal,
         totall,
         setTotall,
+        orderTotal,
+        setOrderTotal,
       }}
     >
       {children}

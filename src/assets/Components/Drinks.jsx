@@ -410,7 +410,6 @@ function Drinks() {
                 <button
                   className="flex item-center hover:bg-indigo-500 justify-center bg-indigo-800 text-white px-5 py-1 w-full sm:text-2xl"
                   onClick={() => {
-                    console.log(currentProduct);
                     console.log(drink.image), console.log(viewItem);
                     setCurrentProduct({
                       id: drink.id,
@@ -421,7 +420,8 @@ function Drinks() {
                       pieces: 1,
                       description: drink.description,
                     }),
-                      setViewItem(true);
+                      console.log(currentProduct);
+                    setViewItem(true);
                   }}
                 >
                   VIEW

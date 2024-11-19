@@ -171,6 +171,8 @@ const Randomitems = () => {
       .catch((error) => console.log(error));
   }, []);
 
+  let newProduct;
+
   return (
     <div className="mb-10 ">
       <div className="bg-indigo-900 text-white py-4 lg:hidden">
@@ -266,7 +268,7 @@ const Randomitems = () => {
                     onClick={() => {
                       console.log(currentProduct);
                       console.log(apiproduct.image), console.log(viewItem);
-                      setCurrentProduct({
+                      (newProduct = {
                         id: apiproduct.id,
                         image: apiproduct.image,
                         name: apiproduct.title,
@@ -275,7 +277,11 @@ const Randomitems = () => {
                         pieces: 1,
                         description: apiproduct.description,
                       }),
+                        setCurrentProduct(newProduct),
                         setViewItem(true);
+
+                      console.log(currentProduct);
+                      console.log(apiproduct.image), console.log(viewItem);
                     }}
                   >
                     VIEW

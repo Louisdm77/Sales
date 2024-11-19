@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useRef, useContext } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { UserView } from "../Context/viewContext.jsx";
@@ -7,7 +7,8 @@ import { useNavigate } from "react-router-dom";
 import Headers from "./Header.jsx";
 const Productdetails = (props) => {
   const reduce = useRef(null);
-
+  let totality = 0;
+  let tota = 0;
   const {
     viewItem,
     setViewItem,
@@ -24,6 +25,17 @@ const Productdetails = (props) => {
     totall,
     setTotall,
   } = UserView();
+  let newTotal = 0;
+  useEffect(() => {
+    console.log(cartItems, "=cartitems");
+    console.log(totall, "= totall");
+    console.log(total, "= total");
+    total.forEach((element) => {
+      newTotal += element;
+    });
+    setTotall(newTotal.toFixed(2));
+  }, [cartItems, totall, total]);
+
   const handleIncrement = () => {
     if (itemCount > 0) {
       reduce.current.disabled = false;
@@ -35,6 +47,25 @@ const Productdetails = (props) => {
       reduce.current.disabled = true;
     }
     setItemCount(itemCount - 1);
+  };
+
+  const handleAddToCart = () => {
+    let productExists = false;
+    for (let i = 0; i < cartItems.length; i++) {
+      if (cartItems[i].id === currentProduct.id) {
+        productExists = true;
+        cartItems[i].pieces += itemCount;
+        setCartItems([...cartItems]);
+      }
+    }
+
+    if (!productExists) {
+      setCartItems([...cartItems, currentProduct]),
+        (currentProduct.pieces = itemCount),
+        setCartNum(cartItems.length + 1);
+      console.log(itemCount);
+      setItemCount(1);
+    }
   };
   return (
     <div className="">
@@ -105,28 +136,8 @@ const Productdetails = (props) => {
               <button
                 className="flex item-center hover:bg-indigo-500 mt-5 py-3 justify-center bg-indigo-800 text-white px-5 py-1 w-full sm:text-2xl md:text-3xl"
                 onClick={() => {
-                  let productExists = false;
-                  for (let i = 0; i < cartItems.length; i++) {
-                    if (cartItems[i].id === currentProduct.id) {
-                      productExists = true;
-                      cartItems[i].pieces += itemCount;
-                      setCartItems([...cartItems]);
-                    }
-                  }
-
-                  if (!productExists) {
-                    setCartItems([...cartItems, currentProduct]),
-                      (currentProduct.pieces = itemCount),
-                      console.log(cartItems),
-                      setCartNum(cartItems.length + 1);
-                    console.log(itemCount);
-                    setItemCount(1);
-                  }
-                  setItemCount(1);
+                  handleAddToCart();
                   setTotal([...total, currentProduct.price * itemCount]);
-                  total.map((tot) => {
-                    setTotall((totall += tot)).toFixed(2);
-                  });
                 }}
               >
                 Add to Cart
