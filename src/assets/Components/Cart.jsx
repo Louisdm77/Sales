@@ -68,10 +68,12 @@ const Cart = () => {
                         <img
                           src={item.image}
                           alt={item.name}
-                          className="lg:w-40 lg:h-40 w-20 m-auto h-20 object-contain"
+                          className="lg:w-40 lg:h-40 w-30 m-auto h-30 object-cover"
                         />
                       </td>
-                      <td className="p-2 border text-center">{item.name}</td>
+                      <td className="p-1 text-sm border text-center">
+                        {item.name}
+                      </td>
                       <td className="p-2 border text-center">{item.pieces}</td>
                       <td className="p-2 border text-center  justify-center">
                         ${(item.price * item.pieces).toFixed(2)}{" "}
