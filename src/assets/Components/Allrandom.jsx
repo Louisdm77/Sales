@@ -35,7 +35,7 @@ const Allrandom = () => {
                   alt=""
                   className="object-contain w-full relative h-[65%]"
                 />
-                <p className="text-red-500 text-sm h-16 lg:text-sm md:text-sm font-bold leading-tight sm:text-lg overflow-hidden">
+                <p className="text-red-500 text-sm h-16 lg:text-xl md:text-lg font-bold leading-tight sm:text-lg overflow-hidden">
                   {allData.title}
                 </p>
                 <div className="flex justify-between overflow-hidden items-center sm:text-lg">

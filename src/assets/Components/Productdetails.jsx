@@ -5,6 +5,7 @@ import { IoIosArrowRoundBack } from "react-icons/io";
 import { UserView } from "../Context/viewContext.jsx";
 import { useNavigate } from "react-router-dom";
 import Headers from "./Header.jsx";
+import Red from "./usered.jsx";
 const Productdetails = (props) => {
   const reduce = useRef(null);
   let totality = 0;
@@ -20,53 +21,71 @@ const Productdetails = (props) => {
     setCartNum,
     itemCount,
     setItemCount,
-    total,
-    setTotal,
-    totall,
-    setTotall,
+    itemNum,
+    setItemNum,
   } = UserView();
-  let newTotal = 0;
+
   useEffect(() => {
-    console.log(cartItems, "=cartitems");
-    console.log(totall, "= totall");
-    console.log(total, "= total");
-    total.forEach((element) => {
-      newTotal += element;
-    });
-    setTotall(newTotal.toFixed(2));
-  }, [cartItems, totall, total]);
+    console.log(itemCount, "itemcount");
+    console.log(cartItems);
+    console.log(itemNum, "itemnum");
+  }, [itemCount, cartItems, itemNum]);
 
+  useEffect(() => {
+    console.log(currentProduct);
+  }, [itemNum, cartItems]);
   const handleIncrement = () => {
-    if (itemCount > 0) {
-      reduce.current.disabled = false;
+    let newItemCount = { ...itemCount };
+    if (currentProduct.id in newItemCount) {
+      newItemCount[currentProduct.id] += 1;
+    } else {
+      newItemCount[currentProduct.id] = 2;
     }
-    setItemCount(itemCount + 1);
-  };
-  const handleDecrement = () => {
-    if (itemCount === 1) {
-      reduce.current.disabled = true;
-    }
-    setItemCount(itemCount - 1);
+    setItemCount(newItemCount);
+    setItemNum(newItemCount[currentProduct.id]);
+    return newItemCount;
+    console.log(itemCount);
+    console.log(itemNum, "itemNum");
   };
 
+  const handleDecrement = () => {
+    let newItemCount = { ...itemCount };
+    if (currentProduct.id in newItemCount) {
+      if (newItemCount[currentProduct.id] > 1) {
+        newItemCount[currentProduct.id] -= 1;
+      } else {
+        newItemCount[currentProduct.id] = 1;
+      }
+    } else {
+      reduce.current.disable = true;
+    }
+    setItemCount(newItemCount);
+    setItemNum(newItemCount[currentProduct.id]);
+    return newItemCount;
+    console.log(itemCount);
+    console.log(itemNum, "itemNum");
+  };
   const handleAddToCart = () => {
+    let newCart = [...cartItems];
     let productExists = false;
-    for (let i = 0; i < cartItems.length; i++) {
-      if (cartItems[i].id === currentProduct.id) {
-        productExists = true;
-        cartItems[i].pieces += itemCount;
-        setCartItems([...cartItems]);
+    if (cartItems.length === 0) {
+      newCart = [...cartItems, { ...currentProduct, pieces: itemNum }];
+      setCartItems(newCart);
+    } else {
+      newCart = [...cartItems];
+      for (let x = 0; x < newCart.length; x++) {
+        if (newCart[x].id === currentProduct.id) {
+          newCart[x].pieces = itemNum;
+          productExists = true;
+        }
+      }
+      if (!productExists) {
+        newCart.push({ ...currentProduct, pieces: itemNum });
+        setCartItems(newCart);
       }
     }
-
-    if (!productExists) {
-      setCartItems([...cartItems, currentProduct]),
-        (currentProduct.pieces = itemCount),
-        setCartNum(cartItems.length + 1);
-      console.log(itemCount);
-      setItemCount(1);
-    }
   };
+
   return (
     <div className="">
       <Headers />
@@ -90,14 +109,18 @@ const Productdetails = (props) => {
             <div className="flex justify-between items-center mt-1 border-2  mt-2 p-2 sm:text-2xl lg:w-[70%] m-auto">
               <button
                 ref={reduce}
-                onClick={handleDecrement}
+                onClick={() => {
+                  handleDecrement();
+                }}
                 className="bg-indigo-800 text-white font-bold p-2 border-2  rounded-full"
               >
                 -
               </button>
-              <p className="text-center font-bold">{itemCount}</p>{" "}
+              <p className="text-center font-bold">{itemNum}</p>{" "}
               <button
-                onClick={handleIncrement}
+                onClick={() => {
+                  handleIncrement();
+                }}
                 className="bg-indigo-800 p-2 text-white font-bold  border-2  rounded-full"
               >
                 +
@@ -137,7 +160,7 @@ const Productdetails = (props) => {
                 className="flex item-center hover:bg-indigo-500 mt-5 py-3 justify-center bg-indigo-800 text-white px-5 py-1 w-full sm:text-2xl md:text-3xl"
                 onClick={() => {
                   handleAddToCart();
-                  setTotal([...total, currentProduct.price * itemCount]);
+                  setCartNum(cartItems.length + 1);
                 }}
               >
                 Add to Cart
@@ -149,5 +172,4 @@ const Productdetails = (props) => {
     </div>
   );
 };
-
 export default Productdetails;

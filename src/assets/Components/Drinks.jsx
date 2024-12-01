@@ -6,6 +6,9 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 function Drinks() {
+  function calculateTotal(x, y) {
+    return x * y;
+  }
   const drinks = [
     {
       id: 1,
@@ -377,7 +380,13 @@ function Drinks() {
     setCurrentProduct,
     itemCount,
     setItemCount,
+    itemNum,
+    setItemNum,
   } = UserView();
+  useEffect(() => {
+    console.log(currentProduct);
+    console.log(currentProduct.total, "curtotal");
+  }, [itemNum, currentProduct]);
 
   return (
     <div>
@@ -399,7 +408,7 @@ function Drinks() {
                 alt=""
                 className="object-cover w-full relative h-[65%]"
               />
-              <p className="text-red-500 text-lg h-16 lg:text-sm md:text-sm font-bold leading-tight sm:text-lg overflow-hidden">
+              <p className="text-red-500 text-lg h-16 lg:text-xl md:text-lg font-bold leading-tight sm:text-lg overflow-hidden">
                 {drink.title}
               </p>
               <div className="flex justify-between overflow-hidden items-center sm:text-lg">
@@ -410,18 +419,18 @@ function Drinks() {
                 <button
                   className="flex item-center hover:bg-indigo-500 justify-center bg-indigo-800 text-white px-5 py-1 w-full sm:text-2xl"
                   onClick={() => {
-                    console.log(drink.image), console.log(viewItem);
+                    console.log(itemNum), console.log(viewItem);
                     setCurrentProduct({
                       id: drink.id,
                       image: drink.image,
                       name: drink.title,
                       price: drink.price,
                       discountPercentage: "",
-                      pieces: 1,
+                      pieces: itemNum,
                       description: drink.description,
+                      total: drink.price * itemNum,
                     }),
-                      console.log(currentProduct);
-                    setViewItem(true);
+                      setViewItem(true);
                   }}
                 >
                   VIEW

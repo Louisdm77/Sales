@@ -15,6 +15,9 @@ import Productdetails from "./Productdetails.jsx";
 import { UserView } from "../Context/viewContext.jsx";
 // import ViewContextProvider from "../Context/viewContext.jsx";
 const Topproducts = () => {
+  function calculateTotal(x, y) {
+    return x * y;
+  }
   const {
     viewItem,
     setViewItem,
@@ -22,6 +25,8 @@ const Topproducts = () => {
     setCurrentProduct,
     itemCount,
     setItemCount,
+    itemNum,
+    setItemNum,
   } = UserView();
 
   const settings = {
@@ -39,7 +44,7 @@ const Topproducts = () => {
 
   const products = [
     {
-      id: 1,
+      id: 111,
       image: Iphone14,
       name: "Apple iPhone 14 Pro",
       price: 780.99,
@@ -48,7 +53,7 @@ const Topproducts = () => {
         "The Apple iPhone 14 Pro is a powerful device with a 6.7 inch display, 12MP camera, and 120Hz AMOLED display. It comes with a 12MP camera, 5G support, and a 120Hz AMOLED display. It is powered by a 120Hz AMOLED display, which is great for gaming and video-intensive applications. ",
     },
     {
-      id: 2,
+      id: 222,
       image: Samsung,
       name: "Samsung Galaxy S22 ",
       price: 679.12,
@@ -57,7 +62,7 @@ const Topproducts = () => {
         " The Samsung Galaxy S22 Ultra is a powerful device with a 6.8 inch display, 12MP camera, and 120Hz AMOLED display. It comes with a 12MP camera, 5G support, and a 120Hz AMOLED display. It is powered by a 120Hz AMOLED display, which is great for gaming and video-intensive applications.",
     },
     {
-      id: 3,
+      id: 333,
       image: Dell,
       name: "Dell XPS 13 Laptop",
       price: 249.06,
@@ -66,7 +71,7 @@ const Topproducts = () => {
         "The Dell XPS 13 is a powerful device with a 13.3 inch display, 12MP camera, and 120Hz AMOLED display. It comes with a 12MP camera, 5G support, and a 120Hz AMOLED display. It is powered by a 120Hz AMOLED display, which is great for gaming and video-intensive applications.",
     },
     {
-      id: 4,
+      id: 423,
       name: "Sony PlayStation 5",
       image: PS,
       price: 500.0,
@@ -75,7 +80,7 @@ const Topproducts = () => {
         "The Sony PlayStation 5 is a powerful device with a 15.6 inch display, 12MP camera, and 120Hz AMOLED display. It comes with a 12MP camera, 5G support, and a 120Hz AMOLED display. It is powered by a 120Hz AMOLED display, which is great for gaming and video-intensive applications.",
     },
     {
-      id: 5,
+      id: 523,
       image: macbook,
       name: "Apple MacBook Air",
       price: 789.99,
@@ -84,7 +89,7 @@ const Topproducts = () => {
         "The Apple MacBook Air is a powerful device with a 13.3 inch display, 12MP camera, and 120Hz AMOLED display. It comes with a 12MP camera, 5G support, and a 120Hz AMOLED display. It is powered by a 120Hz AMOLED display, which is great for gaming and video-intensive applications.",
     },
     {
-      id: 6,
+      id: 126,
       name: "Google Pixel 6 Pro",
       image: google,
       price: 797.88,
@@ -93,7 +98,7 @@ const Topproducts = () => {
         "The Google Pixel 6 Pro is a powerful device with a 6.5 inch display, 12MP camera, and 120Hz AMOLED display. It comes with a 12MP camera, 5G support, and a 120Hz AMOLED display. It is powered by a 120Hz AMOLED display, which is great for gaming and video-intensive applications.",
     },
     {
-      id: 7,
+      id: 7127,
       image: nint,
       name: "Nintendo Switch OLED",
       price: 359.99,
@@ -102,7 +107,7 @@ const Topproducts = () => {
         "The Nintendo Switch OLED is a powerful device with a 10.8 inch display, 12MP camera, and 120Hz AMOLED display. It comes with a 12MP camera, 5G support, and a 120Hz AMOLED display. It is powered by a 120Hz AMOLED display, which is great for gaming and video-intensive applications.",
     },
     {
-      id: 8,
+      id: 128,
       image: micro,
       name: "Microsoft Surface Pro 8",
       price: 989.99,
@@ -156,8 +161,9 @@ const Topproducts = () => {
                       name: product.name,
                       price: product.price,
                       discountPercentage: product.discountPercentage,
-                      pieces: itemCount,
+                      pieces: itemNum,
                       description: product.description,
+                      total: calculateTotal(product.price, itemNum),
                     }),
                       setViewItem(true);
                   }}

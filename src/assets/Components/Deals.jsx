@@ -92,7 +92,7 @@ const Deals = () => {
             <FaTags className="text-orange-500" /> Flash Sales
           </h2>
           <div>
-            <h2 className="mx-10 font-bold text-center text-lg sm:text-3xl md:text-4xl">
+            <h2 className="mx-10 font-bold text-center text-lg sm:text-2xl md:text-2xl">
               {hour < 10 ? "0" + hour : "" + hour}h :{" "}
               {min < 10 ? "0" + min : "" + min}m :{" "}
               {sec < 10 ? "0" + sec : "" + sec}s

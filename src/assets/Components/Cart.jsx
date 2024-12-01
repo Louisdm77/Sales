@@ -11,42 +11,32 @@ const Cart = () => {
     setCartNum,
     itemCount,
     setItemCount,
-    total,
-    setTotal,
-    totall,
-    setTotall,
-    orderTotal,
-    setOrderTotal,
   } = UserView();
 
   const others = {
     tax: 10,
     ship: 10,
   };
+  let subTotal = 0;
 
-  useEffect(() => {
-    const neww = parseFloat(totall) + (others.tax || 0) + (others.ship || 0); // Ensure totall others.tax and others.ship are numbers
-    setOrderTotal(neww.toFixed(2)); // Convert to a string with 2 decimal places
-  }, [totall, others.tax, others.ship]); // Add others.tax and others.ship to dependencies
+  for (let x = 0; x < cartItems.length; x++) {
+    subTotal += cartItems[x].total;
+  }
+
   return (
     <div>
       <Header />
       <div className="block mt-4 text-2xl px-8 lg:flex lg:justify-between">
         <div className="lg:w-[60%]">
           <h2 className="text-center font-bold text-2xl">Shopping Cart</h2>
-
+          <p className="flex justify-between items-center my-2 text-lg">
+            <span>Subtotal</span>
+            <span>${subTotal.toFixed(2)}</span>
+          </p>
           <table className=" w-full ">
-            {/* <thead>
-              <tr className="bg-gray-200 text-center">
-                <th className="w-[25%] p-2 text-center border">Product</th>
-                <th className="w-[25%] p-2 text-center border">Name</th>
-                <th className="w-[25%] p-2 text-center border">Quantity</th>
-                <th className="w-[25%] p-2 text-center border">Total</th>
-              </tr>
-            </thead> */}
             <tbody>
               {cartItems.length === 0 ? (
-                <tr>
+                <tr className="border-separate">
                   <td colSpan={4} className="p-2 text-center border">
                     Your cart is empty.
                   </td>
@@ -54,46 +44,60 @@ const Cart = () => {
               ) : (
                 <>
                   <tr>
-                    <td colSpan={4} className="p-2 text-center border text-lg">
-                      You have {cartItems.length} items in your cart.
+                    <td colSpan={4} className="p-2 text-start  text-lg">
+                      Cart ({cartItems.length})
                     </td>
                   </tr>
-                  {cartItems.map((item) => (
+                  {cartItems.map((item, index) => (
                     <tr
                       key={item.id}
-                      className="bg-gray-200"
-                      style={{ marginBottom: "10px" }}
+                      className={`${
+                        index % 2 !== 0 ? "bg-white" : "bg-gray-100"
+                      } text-sm mb-2 md:text-xl`}
                     >
-                      <td className="p-2 border ">
+                      <td className="py-2">
                         <img
                           src={item.image}
                           alt={item.name}
-                          className="lg:w-40 lg:h-40 w-30 m-auto h-30 object-cover"
+                          className="lg:w-40 lg:h-40 w-20 m-auto h-20 md:h-20 md:w-20 md:text-2xl object-cover"
                         />
                       </td>
-                      <td className="p-1 text-sm border text-center">
+                      <td className="p-1 text-sm lg:text-2xl text-red-500  text-center">
                         {item.name}
                       </td>
-                      <td className="p-2 border text-center">
-                        {item.pieces}pcs
-                      </td>
-                      <td className="p-2 border text-center  justify-center">
-                        ${(item.price * item.pieces).toFixed(2)}{" "}
-                        <button
-                          className="mx-4"
-                          onClick={() => {
-                            setCartNum(cartNum - 1);
-                            setCartItems((prevCartItems) => {
-                              const newCartItems = prevCartItems.filter(
-                                (cartItem) => cartItem.id !== item.id
-                              );
-                              return newCartItems;
-                            });
-                            setTotall(totall - item.price);
-                          }}
-                        >
-                          <CiTrash />
-                        </button>
+                      <td className="p-2  text-center">{item.pieces}pc(s)</td>
+                      <td className="p-2  text-center   justify-center">
+                        <div className="flex justify-center items-center">
+                          <p>${(item.price * item.pieces).toFixed(2)}</p>{" "}
+                          <button
+                            className="mx-4"
+                            onClick={() => {
+                              setCartNum(cartNum - 1);
+                            }}
+                          >
+                            <CiTrash
+                              className="text-red-500"
+                              // onClick={() => {
+                              //   setCartItems((prevItems) => {
+                              //     const newCartItems = prevItems.filter(
+                              //       (cartItem) => cartItem.id !== item.id
+                              //     );
+                              //     setCartNum(newCartItems.length); // Update cartNum based on new item count
+                              //     return newCartItems;
+                              //   });
+                              // }}
+                              onClick={() => {
+                                setCartItems((prevItems) => {
+                                  let newCartItems = prevItems.filter(
+                                    (cartItems) => cartItems.id !== item.id
+                                  );
+                                  setCartNum(newCartItems.length);
+                                  return newCartItems;
+                                });
+                              }}
+                            />
+                          </button>
+                        </div>
                       </td>
                     </tr>
                   ))}
@@ -103,7 +107,7 @@ const Cart = () => {
           </table>
         </div>
         <div
-          className="lg:w-[30%] mt-4 lg:mt-0 p-4"
+          className="lg:w-[30%] mt-4 lg:mt-0 p-4 lg:text-2xl text-sm"
           style={{
             display: cartItems.length === 0 ? "none" : "block",
           }}
@@ -114,7 +118,7 @@ const Cart = () => {
             <h2 className="font-bold">Order Summary</h2>
             <p className="flex justify-between items-center my-2">
               <span>Subtotal</span>
-              <span>${totall}</span>
+              <span>${subTotal.toFixed(2)}</span>
             </p>
             <hr className="border border-gray-300" />
             <p className="flex justify-between items-center my-2">
@@ -130,7 +134,7 @@ const Cart = () => {
             <hr className="border border-gray-300" />
             <p className="flex justify-between items-center my-2">
               <span>Order total</span>
-              <span>${orderTotal}</span>
+              <span>${(subTotal + others.ship + others.tax).toFixed(2)}</span>
             </p>
             <hr className="border-2 border-gray-500" />
             <button className="bg-blue-500 hover:bg-blue-700 text-white w-full font-bold py-2 px-4 rounded mt-4">

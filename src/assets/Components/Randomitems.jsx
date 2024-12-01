@@ -160,8 +160,14 @@ const Randomitems = () => {
         " Unlock advanced gaming features with Razer Kraken X's customizable lighting, cooling ear cushions, and precise 7.1 surround sound.",
     },
   ];
-  const { viewItem, setViewItem, currentProduct, setCurrentProduct } =
-    UserView();
+  const {
+    viewItem,
+    setViewItem,
+    currentProduct,
+    setCurrentProduct,
+    itemNum,
+    setItemNum,
+  } = UserView();
   const [apiProducts, setApiProduct] = useState([]);
   const [limit, setLimit] = useState(10);
   useEffect(() => {
@@ -192,11 +198,11 @@ const Randomitems = () => {
                 alt=""
                 className="object-fit w-full relative h-[65%]"
               />
-              <p className="text-red-500 text-sm font-bold h-9  leading-tight ">
+              <p className="text-red-500 text-sm font-bold h-9 md:text-sm  leading-tight ">
                 {product.name}
               </p>
               <div className="flex justify-between overflow-hidden items-center sm:text-lg">
-                <p className="font-bold">${product.price}</p>
+                <p className="font-bold lg:text-sm">${product.price}</p>
                 <p className="font-bold text-blue-500 italic">
                   <strike>
                     $
@@ -223,7 +229,7 @@ const Randomitems = () => {
                       name: product.name,
                       price: product.price,
                       discountPercentage: product.discountPercentage,
-                      pieces: 1,
+                      pieces: itemNum,
                       description: product.description,
                     }),
                       setViewItem(true);
@@ -255,7 +261,7 @@ const Randomitems = () => {
                   alt=""
                   className="object-contain w-full relative h-[65%]"
                 />
-                <p className="text-red-500 text-sm h-16 lg:text-sm md:text-sm font-bold leading-tight sm:text-lg overflow-hidden">
+                <p className="text-red-500 text-sm lg:text-xl md:text-lg h-16  font-bold leading-tight sm:text-lg overflow-hidden">
                   {apiproduct.title}
                 </p>
                 <div className="flex justify-between overflow-hidden items-center sm:text-lg">
@@ -274,8 +280,9 @@ const Randomitems = () => {
                         name: apiproduct.title,
                         price: apiproduct.price,
                         discountPercentage: "",
-                        pieces: 1,
+                        pieces: itemNum,
                         description: apiproduct.description,
+                        total: this.price * this.pieces,
                       }),
                         setCurrentProduct(newProduct),
                         setViewItem(true);

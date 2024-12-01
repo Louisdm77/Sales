@@ -16,8 +16,17 @@ import Head8 from "../images/head8.jpg";
 import { UserView } from "../Context/viewContext";
 
 const Discount = () => {
-  const { viewItem, setViewItem, currentProduct, setCurrentProduct } =
-    UserView();
+  function calculateTotal(x, y) {
+    return x * y;
+  }
+  const {
+    viewItem,
+    setViewItem,
+    currentProduct,
+    setCurrentProduct,
+    itemNum,
+    setItemNum,
+  } = UserView();
   const settings = {
     className: "center",
     infinite: false,
@@ -126,7 +135,7 @@ const Discount = () => {
                   alt=""
                   className="object-cover object-center w-full relative h-[80%]"
                 />
-                <p className="text-red-500 font-bold h-9 leading-tight sm:text-2xl">
+                <p className="text-red-500 font-bold h-9 leading-tight sm:text-xl  md:text-lg lg:text-2xl">
                   {product.name}
                 </p>
                 <div className="flex justify-between overflow-hidden items-center sm:text-2xl">
@@ -157,8 +166,9 @@ const Discount = () => {
                         name: product.name,
                         price: product.price,
                         discountPercentage: product.discountPercentage,
-                        pieces: 1,
+                        pieces: itemNum,
                         description: product.description,
+                        total: calculateTotal(product.price, itemNum),
                       }),
                         setViewItem(true);
                     }}
