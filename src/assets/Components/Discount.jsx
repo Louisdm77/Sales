@@ -26,6 +26,8 @@ const Discount = () => {
     setCurrentProduct,
     itemNum,
     setItemNum,
+    itemCount,
+    setItemCount,
   } = UserView();
   const settings = {
     className: "center",
@@ -166,11 +168,12 @@ const Discount = () => {
                         name: product.name,
                         price: product.price,
                         discountPercentage: product.discountPercentage,
-                        pieces: itemNum,
+                        pieces: itemCount[currentProduct.id],
                         description: product.description,
                         total: calculateTotal(product.price, itemNum),
                       }),
                         setViewItem(true);
+                      setItemNum(0);
                     }}
                   >
                     VIEW

@@ -8,6 +8,17 @@ export default {
       lg: "1024px",
       xl: "1280px",
     },
+    // extend: {
+    //   animation: {
+    //     "infinite-scroll": "infinite-scroll 30s linear infinite",
+    //   },
+    //   keyframes: {
+    //     "infinite-scroll": {
+    //       from: { transform: "translateX(0)" },
+    //       to: { transform: "translateX(-100%)" },
+    //     },
+    //   },
+    // },
   },
   plugins: [],
 };

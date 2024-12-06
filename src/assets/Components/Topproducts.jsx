@@ -161,7 +161,7 @@ const Topproducts = () => {
                       name: product.name,
                       price: product.price,
                       discountPercentage: product.discountPercentage,
-                      pieces: itemNum,
+                      pieces: itemCount[currentProduct.id],
                       description: product.description,
                       total: calculateTotal(product.price, itemNum),
                     }),

@@ -11,7 +11,7 @@ function Drinks() {
   }
   const drinks = [
     {
-      id: 1,
+      id: 231,
       title: "Cognac rose",
       description: "Smooth and rich flavor",
       price: 29.99,
@@ -20,7 +20,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 2,
+      id: 2445,
       title: "Lager Mockup",
       description: "Pure and versatile spirit",
       price: 24.99,
@@ -29,7 +29,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 3,
+      id: 3343,
       title: "Rum",
       description: "Sweet and flavorful, great for cocktails",
       price: 22.99,
@@ -38,7 +38,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 4,
+      id: 4342,
       title: "Gin",
       description: "Herbaceous and aromatic spirit",
       price: 27.99,
@@ -47,7 +47,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 5,
+      id: 532,
       title: "Tequila",
       description: "Agave-based spirit with a kick",
       price: 34.99,
@@ -56,7 +56,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 6,
+      id: 63453,
       title: "Brandy",
       description: "Rich and smooth, perfect for sipping",
       price: 29.99,
@@ -65,7 +65,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 7,
+      id: 73,
       title: "Bourbon",
       description: "Sweet and full-bodied, with notes of vanilla",
       price: 35.99,
@@ -83,7 +83,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 9,
+      id: 934,
       title: "Irish Cream",
       description: "Creamy liqueur with a hint of chocolate",
       price: 25.99,
@@ -92,7 +92,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 10,
+      id: 1340,
       title: "Absinthe",
       description: "Strong herbal spirit with a unique flavor",
       price: 45.99,
@@ -101,7 +101,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 11,
+      id: 1341,
       title: "Pisco",
       description: "Peruvian brandy with fruity notes",
       price: 32.99,
@@ -110,7 +110,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 12,
+      id: 1342,
       title: "Sake",
       description: "Japanese rice wine, smooth and delicate",
       price: 19.99,
@@ -119,7 +119,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 13,
+      id: 1343,
       title: "Mezcal",
       description: "Smoky and earthy agave spirit",
       price: 36.99,
@@ -128,7 +128,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 14,
+      id: 1344,
       title: "Cachaça",
       description: "Brazilian sugarcane spirit, perfect for caipirinhas",
       price: 24.99,
@@ -137,7 +137,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 15,
+      id: 1345,
       title: "Limoncello",
       description: "Italian lemon liqueur, sweet and zesty",
       price: 18.99,
@@ -146,7 +146,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 16,
+      id: 1634,
       title: "Amaretto",
       description: "Sweet almond-flavored liqueur",
       price: 22.99,
@@ -155,7 +155,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 17,
+      id: 1734,
       title: "Campari",
       description: "Bittersweet aperitif with a vibrant red color",
       price: 27.99,
@@ -164,7 +164,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 18,
+      id: 1348,
       title: "Triple Sec",
       description: "Orange-flavored liqueur, great for cocktails",
       price: 21.99,
@@ -173,7 +173,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 19,
+      id: 1349,
       title: "Jägermeister",
       description: "Herbal liqueur with a bold flavor",
       price: 29.99,
@@ -182,7 +182,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 20,
+      id: 2340,
       title: "Frangelico",
       description: "Hazelnut liqueur with a sweet and nutty taste",
       price: 26.99,
@@ -200,7 +200,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 22,
+      id: 2342,
       title: "Baileys Irish Cream",
       description: "Creamy liqueur with rich chocolate flavor",
       price: 28.99,
@@ -209,7 +209,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 23,
+      id: 2343,
       title: "Cointreau",
       description: "Premium orange liqueur with a balanced flavor",
       price: 34.99,
@@ -218,7 +218,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 24,
+      id: 2434,
       title: "Schnapps",
       description: "Sweet liqueur, available in various flavors",
       price: 19.99,
@@ -227,7 +227,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 25,
+      id: 2534,
       title: "Lillet",
       description: "French aperitif wine with fruit flavors",
       price: 27.99,
@@ -236,7 +236,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 26,
+      id: 2634,
       title: "Absinthe",
       description: "Strong herbal spirit with a unique flavor",
       price: 45.99,
@@ -245,7 +245,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 27,
+      id: 3427,
       title: "Pernod",
       description: "Anise-flavored liqueur that pairs well with cocktails",
       price: 30.99,
@@ -254,7 +254,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 28,
+      id: 3428,
       title: "Calvados",
       description: "Apple brandy from the Normandy region of France",
       price: 39.99,
@@ -263,7 +263,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 29,
+      id: 3429,
       title: "Ardbeg 10 Year Old",
       description: "Peaty and smoky single malt Scotch whisky",
       price: 49.99,
@@ -272,7 +272,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 30,
+      id: 3430,
       title: "Hendrick's Gin",
       description: "Unique gin infused with cucumber and rose",
       price: 39.99,
@@ -281,7 +281,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 31,
+      id: 3431,
       title: "Crown Royal",
       description: "Canadian whisky with a smooth taste",
       price: 36.99,
@@ -290,7 +290,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 32,
+      id: 3432,
       title: "Tito's Handmade Vodka",
       description: "Crafted from corn, clean and gluten-free",
       price: 29.99,
@@ -299,7 +299,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 33,
+      id: 3433,
       title: "Belvedere Vodka",
       description: "Polish vodka made from rye, smooth and creamy",
       price: 39.99,
@@ -308,7 +308,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 34,
+      id: 3344,
       title: "Don Julio Tequila",
       description: "High-quality tequila with a smooth finish",
       price: 49.99,
@@ -317,7 +317,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 35,
+      id: 3534,
       title: "Chivas Regal",
       description: "Blended Scotch whisky with a rich taste",
       price: 44.99,
@@ -326,7 +326,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 36,
+      id: 3634,
       title: "Glenfiddich 12 Year Old",
       description: "Classic single malt Scotch whisky, smooth and fruity",
       price: 42.99,
@@ -335,7 +335,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 37,
+      id: 3734,
       title: "Jack Daniel's",
       description: "Tennessee whiskey with a distinct flavor",
       price: 36.99,
@@ -344,7 +344,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 38,
+      id: 3348,
       title: "Woodford Reserve",
       description: "Premium bourbon with a rich, full-bodied flavor",
       price: 49.99,
@@ -353,7 +353,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 39,
+      id: 3349,
       title: "Pappy Van Winkle's",
       description: "Highly sought-after bourbon, rich and complex",
       price: 299.99,
@@ -362,7 +362,7 @@ function Drinks() {
       category: "Liquor",
     },
     {
-      id: 40,
+      id: 4340,
       title: "Grey Goose Vodka",
       description: "French vodka known for its smoothness",
       price: 39.99,
@@ -382,11 +382,14 @@ function Drinks() {
     setItemCount,
     itemNum,
     setItemNum,
+    cartItems,
+    num,
+    setNum,
   } = UserView();
   useEffect(() => {
     console.log(currentProduct);
     console.log(currentProduct.total, "curtotal");
-  }, [itemNum, currentProduct]);
+  }, [itemNum, currentProduct, cartItems]);
 
   return (
     <div>
@@ -426,11 +429,13 @@ function Drinks() {
                       name: drink.title,
                       price: drink.price,
                       discountPercentage: "",
-                      pieces: itemNum,
+                      pieces: itemCount[currentProduct.id],
                       description: drink.description,
-                      total: drink.price * itemNum,
+                      total: itemNum * currentProduct.pieces,
                     }),
                       setViewItem(true);
+                    setItemNum(0);
+                    setNum(1);
                   }}
                 >
                   VIEW

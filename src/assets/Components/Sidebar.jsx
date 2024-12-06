@@ -17,13 +17,13 @@ const Sidebar = (props) => {
 
   return (
     <div
-      className="side bg-white  h-[100vh] text-black w-[300px] overflow-y-scroll text-black "
+      className="side bg-white  h-[100vh] text-black w-[300px] overflow-y-scroll text-black fixed"
       style={{
         display: props.sideShow ? "block" : "none",
       }}
     >
       <div style={{ paddingTop: "0px" }}>
-        <div className="mt-0 h-[40%] bg-indigo-900 text-white relative">
+        <div className="mt-0 h-[40%] bg-indigo-900 text-white relative ">
           <div className="mx-5 text-white font-bold text-lg italic flex justify-between">
             <span>
               Louis<span className="text-yellow-400">DM</span>

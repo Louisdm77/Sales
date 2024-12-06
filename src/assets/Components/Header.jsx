@@ -110,33 +110,18 @@ const Header = (props) => {
             </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <Link to="#" className="md:text-3xl sm:text-2xl lg:text-xl">
+            <Link to="/Laptop" className="md:text-3xl sm:text-2xl lg:text-xl">
               PC/Laptops
             </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <Link to="#" className="md:text-3xl sm:text-2xl lg:text-xl">
-              Iphones
-            </Link>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Link to="#" className="md:text-3xl sm:text-2xl lg:text-xl">
+            <Link to="/Camera" className="md:text-3xl sm:text-2xl lg:text-xl">
               Camera
             </Link>
-          </SwiperSlide>
+          </SwiperSlide>{" "}
           <SwiperSlide>
             <Link to="#" className="md:text-3xl sm:text-2xl lg:text-xl">
-              Electronics
-            </Link>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Link to="#" className="md:text-3xl sm:text-2xl lg:text-xl">
-              Watches
-            </Link>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Link to="#" className="md:text-3xl sm:text-2xl lg:text-xl">
-              Gaming
+              Iphones
             </Link>
           </SwiperSlide>
           <SwiperSlide>

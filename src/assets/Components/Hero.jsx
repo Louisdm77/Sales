@@ -27,6 +27,110 @@ const Hero = () => {
       <div className=" bg-indigo-800 border-2  text-white text-center font-bold h-[15%] sm:h-[8%] md:h-[8%] lg:h-[8%] flex justify-center items-center sm:text-2xl md:text-3xl">
         Call to ORDER: +234 813 539 0524
       </div>
+      <div class="w-full overflow-hidden">
+        <div class="inline-flex animate-infinite-scroll">
+          <ul class="flex items-center">
+            <li class="mx-4">
+              <img
+                src="https://cdn.prod.website-files.com/62b0e6308cc691625470b227/62dec0259f18b71442a15966_Apple-Logo.png"
+                class="w-[70px] h-[40px]"
+                alt="Logo"
+              />
+            </li>{" "}
+            <li class="mx-4">
+              <img
+                src="https://cdn.prod.website-files.com/62b0e6308cc691625470b227/62dec0259f18b71442a15966_Apple-Logo.png"
+                class="w-[70px] h-[40px]"
+                alt="Logo"
+              />
+            </li>{" "}
+            <li class="mx-4">
+              <img
+                src="https://cdn.prod.website-files.com/62b0e6308cc691625470b227/62dec0259f18b71442a15966_Apple-Logo.png"
+                class="w-[70px] h-[40px]"
+                alt="Logo"
+              />
+            </li>{" "}
+            <li class="mx-4">
+              <img
+                src="https://cdn.prod.website-files.com/62b0e6308cc691625470b227/62dec0259f18b71442a15966_Apple-Logo.png"
+                class="w-[70px] h-[40px]"
+                alt="Logo"
+              />
+            </li>{" "}
+            <li class="mx-4">
+              <img
+                src="https://cdn.prod.website-files.com/62b0e6308cc691625470b227/62dec0259f18b71442a15966_Apple-Logo.png"
+                class="w-[70px] h-[40px]"
+                alt="Logo"
+              />
+            </li>{" "}
+            <li class="mx-4">
+              <img
+                src="https://cdn.prod.website-files.com/62b0e6308cc691625470b227/62dec0259f18b71442a15966_Apple-Logo.png"
+                class="w-[70px] h-[40px]"
+                alt="Logo"
+              />
+            </li>{" "}
+            <li class="mx-4">
+              <img
+                src="https://cdn.prod.website-files.com/62b0e6308cc691625470b227/62dec0259f18b71442a15966_Apple-Logo.png"
+                class="w-[70px] h-[40px]"
+                alt="Logo"
+              />
+            </li>{" "}
+            <li class="mx-4">
+              <img
+                src="https://cdn.prod.website-files.com/62b0e6308cc691625470b227/62dec0259f18b71442a15966_Apple-Logo.png"
+                class="w-[70px] h-[40px]"
+                alt="Logo"
+              />
+            </li>{" "}
+            <li class="mx-4">
+              <img
+                src="https://cdn.prod.website-files.com/62b0e6308cc691625470b227/62dec0259f18b71442a15966_Apple-Logo.png"
+                class="w-[70px] h-[40px]"
+                alt="Logo"
+              />
+            </li>{" "}
+            <li class="mx-4">
+              <img
+                src="https://cdn.prod.website-files.com/62b0e6308cc691625470b227/62dec0259f18b71442a15966_Apple-Logo.png"
+                class="w-[70px] h-[40px]"
+                alt="Logo"
+              />
+            </li>{" "}
+            <li class="mx-4">
+              <img
+                src="https://cdn.prod.website-files.com/62b0e6308cc691625470b227/62dec0259f18b71442a15966_Apple-Logo.png"
+                class="w-[70px] h-[40px]"
+                alt="Logo"
+              />
+            </li>{" "}
+            <li class="mx-4">
+              <img
+                src="https://cdn.prod.website-files.com/62b0e6308cc691625470b227/62dec0259f18b71442a15966_Apple-Logo.png"
+                class="w-[70px] h-[40px]"
+                alt="Logo"
+              />
+            </li>
+            <li class="mx-4">
+              <img
+                src="https://cdn.prod.website-files.com/62b0e6308cc691625470b227/62dec0259f18b71442a15966_Apple-Logo.png"
+                class="w-[70px] h-[40px]"
+                alt="Logo"
+              />
+            </li>
+            <li class="mx-4">
+              <img
+                src="https://cdn.prod.website-files.com/62b0e6308cc691625470b227/62dec0259f18b71442a15966_Apple-Logo.png"
+                class="w-[70px] h-[40px]"
+                alt="Logo"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
       <div className="h-[70%] w-[100%] flex justify-center items-center">
         <div className="hidden mx-auto p-4 lg:block lg:w-[25%] lg:h-[100%] bg-gray-200">
           <ul className="">

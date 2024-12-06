@@ -160,6 +160,9 @@ const Randomitems = () => {
         " Unlock advanced gaming features with Razer Kraken X's customizable lighting, cooling ear cushions, and precise 7.1 surround sound.",
     },
   ];
+  function calculateTotal(x, y) {
+    return x * y;
+  }
   const {
     viewItem,
     setViewItem,
@@ -167,6 +170,8 @@ const Randomitems = () => {
     setCurrentProduct,
     itemNum,
     setItemNum,
+    itemCount,
+    setItemCount,
   } = UserView();
   const [apiProducts, setApiProduct] = useState([]);
   const [limit, setLimit] = useState(10);
@@ -229,8 +234,12 @@ const Randomitems = () => {
                       name: product.name,
                       price: product.price,
                       discountPercentage: product.discountPercentage,
-                      pieces: itemNum,
+                      pieces: itemCount[currentProduct.id],
                       description: product.description,
+                      total: calculateTotal(
+                        parseFloat(product.price),
+                        parseFloat(itemNum)
+                      ),
                     }),
                       setViewItem(true);
                   }}
@@ -280,13 +289,13 @@ const Randomitems = () => {
                         name: apiproduct.title,
                         price: apiproduct.price,
                         discountPercentage: "",
-                        pieces: itemNum,
+                        pieces: itemCount[currentProduct.id],
                         description: apiproduct.description,
-                        total: this.price * this.pieces,
+                        total: calculateTotal(apiproduct.price, itemNum),
                       }),
                         setCurrentProduct(newProduct),
                         setViewItem(true);
-
+                      setItemNum(0);
                       console.log(currentProduct);
                       console.log(apiproduct.image), console.log(viewItem);
                     }}

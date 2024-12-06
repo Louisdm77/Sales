@@ -5,9 +5,18 @@ import { UserView } from "../Context/viewContext";
 import { Link } from "react-router-dom";
 
 const Allrandom = () => {
-  const { viewItem, setViewItem, currentProduct, setCurrentProduct } =
-    UserView();
+  const {
+    viewItem,
+    setViewItem,
+    currentProduct,
+    setCurrentProduct,
+    itemNum,
+    setItemNum,
+  } = UserView();
   const [allDatas, setAllData] = useState([]);
+  function calculateTotal(x, y) {
+    return x * y;
+  }
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products`)
       .then((response) => response.json())
@@ -54,10 +63,12 @@ const Allrandom = () => {
                         name: allData.name,
                         price: allData.price,
                         discountPercentage: "",
-                        pieces: 1,
+                        pieces: itemCount[currentProduct.id],
                         description: allData.description,
+                        total: calculateTotal(allData.price, itemNum),
                       }),
                         setViewItem(true);
+                      setItemNum(0);
                     }}
                   >
                     VIEW

@@ -48,3 +48,15 @@ body {
   padding-top: 20px;
   border-bottom: 0.5px solid rgb(131, 122, 122);
 }
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Adjust as necessary */
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 20s linear infinite; /* Adjust duration as needed */
+}

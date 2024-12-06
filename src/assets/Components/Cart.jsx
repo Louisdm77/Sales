@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./Header";
-import { useState, useContext, useEffect } from "react";
+import { useContext } from "react";
 import { UserView } from "../Context/viewContext.jsx";
 import { CiTrash } from "react-icons/ci";
+
 const Cart = () => {
   const {
     cartItems,
@@ -11,17 +12,26 @@ const Cart = () => {
     setCartNum,
     itemCount,
     setItemCount,
+    currentProduct,
+    setCurrentProduct,
   } = UserView();
 
   const others = {
     tax: 10,
     ship: 10,
   };
-  let subTotal = 0;
 
-  for (let x = 0; x < cartItems.length; x++) {
-    subTotal += cartItems[x].total;
-  }
+  let subTotal = cartItems.reduce((total, item) => total + item.pieces, 0);
+
+  const handleRemoveItem = (itemId) => {
+    setCartItems((prevItems) => {
+      const newCartItems = prevItems.filter(
+        (cartItem) => cartItem.id !== itemId
+      );
+      setCartNum(newCartItems.length);
+      return newCartItems;
+    });
+  };
 
   return (
     <div>
@@ -33,10 +43,10 @@ const Cart = () => {
             <span>Subtotal</span>
             <span>${subTotal.toFixed(2)}</span>
           </p>
-          <table className=" w-full ">
+          <table className="w-full ">
             <tbody>
               {cartItems.length === 0 ? (
-                <tr className="border-separate">
+                <tr>
                   <td colSpan={4} className="p-2 text-center border">
                     Your cart is empty.
                   </td>
@@ -44,7 +54,7 @@ const Cart = () => {
               ) : (
                 <>
                   <tr>
-                    <td colSpan={4} className="p-2 text-start  text-lg">
+                    <td colSpan={4} className="p-2 text-start text-lg">
                       Cart ({cartItems.length})
                     </td>
                   </tr>
@@ -55,47 +65,30 @@ const Cart = () => {
                         index % 2 !== 0 ? "bg-white" : "bg-gray-100"
                       } text-sm mb-2 md:text-xl`}
                     >
-                      <td className="py-2">
+                      <td className="w-[30%] py-2">
                         <img
                           src={item.image}
                           alt={item.name}
-                          className="lg:w-40 lg:h-40 w-20 m-auto h-20 md:h-20 md:w-20 md:text-2xl object-cover"
+                          className="lg:w-40 lg:h-40 md:w-20 w-full m-auto h-20 md:h-20 object-contain"
                         />
                       </td>
-                      <td className="p-1 text-sm lg:text-2xl text-red-500  text-center">
+                      <td className="p-1 text-sm lg:text-xl text-red-500 break-words lg:w-[50%] text-center">
                         {item.name}
                       </td>
-                      <td className="p-2  text-center">{item.pieces}pc(s)</td>
-                      <td className="p-2  text-center   justify-center">
+                      <td className="p-2 text-center lg:w-[10%]">
+                        {itemCount[item.id]} pc(s)
+                      </td>{" "}
+                      <td className="p-2 text-center lg:w-[10%]">
+                        {item.price}
+                      </td>
+                      <td className="p-2 text-center lg:w-[15%]">
                         <div className="flex justify-center items-center">
-                          <p>${(item.price * item.pieces).toFixed(2)}</p>{" "}
+                          <p>${item.pieces.toFixed(2)}</p>
                           <button
                             className="mx-4"
-                            onClick={() => {
-                              setCartNum(cartNum - 1);
-                            }}
+                            onClick={() => handleRemoveItem(item.id)}
                           >
-                            <CiTrash
-                              className="text-red-500"
-                              // onClick={() => {
-                              //   setCartItems((prevItems) => {
-                              //     const newCartItems = prevItems.filter(
-                              //       (cartItem) => cartItem.id !== item.id
-                              //     );
-                              //     setCartNum(newCartItems.length); // Update cartNum based on new item count
-                              //     return newCartItems;
-                              //   });
-                              // }}
-                              onClick={() => {
-                                setCartItems((prevItems) => {
-                                  let newCartItems = prevItems.filter(
-                                    (cartItems) => cartItems.id !== item.id
-                                  );
-                                  setCartNum(newCartItems.length);
-                                  return newCartItems;
-                                });
-                              }}
-                            />
+                            <CiTrash className="text-red-500" />
                           </button>
                         </div>
                       </td>
@@ -108,12 +101,9 @@ const Cart = () => {
         </div>
         <div
           className="lg:w-[30%] mt-4 lg:mt-0 p-4 lg:text-2xl text-sm"
-          style={{
-            display: cartItems.length === 0 ? "none" : "block",
-          }}
+          style={{ display: cartItems.length === 0 ? "none" : "block" }}
         >
-          <h2 className="text-center font-bold text-2xl">Payment Method </h2>
-
+          <h2 className="text-center font-bold text-2xl">Payment Method</h2>
           <div className="border border-gray-400 p-4 rounded-lg">
             <h2 className="font-bold">Order Summary</h2>
             <p className="flex justify-between items-center my-2">
@@ -130,7 +120,6 @@ const Cart = () => {
               <span>Tax estimate</span>
               <span>${others.tax}</span>
             </p>
-
             <hr className="border border-gray-300" />
             <p className="flex justify-between items-center my-2">
               <span>Order total</span>
