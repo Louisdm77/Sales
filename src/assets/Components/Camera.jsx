@@ -233,20 +233,16 @@ function cameras() {
     <div>
       <Header />
       <div className="bg-indigo-900 text-white py-4 mt-8">
-        <div class="w-full inline-flex flex-nowrap">
-          <ul
-            class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
-            aria-hidden="true"
-          >
-            <li>
-              <p> 50% Sales Discount!!!</p>
+        <div class="w-full overflow-hidden">
+          <ul class="flex items-center justify-center md:justify-start whitespace-nowrap animate-infinite-scroll">
+            <li class="mx-4">
+              <p class="text-center">50% Sales Discount!!!</p>
             </li>
-            <li>
-              <p>You cant miss this !!!</p>
+            <li class="mx-4">
+              <p class="text-center">You can't miss this!!!</p>
             </li>
-
-            <li>
-              <p>CHRISTMAS IS HERE, GET NEW GADGETS!!!</p>
+            <li class="mx-4">
+              <p class="text-center">CHRISTMAS IS HERE, GET NEW GADGETS!!!</p>
             </li>
           </ul>
         </div>
